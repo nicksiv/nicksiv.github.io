@@ -4,7 +4,7 @@
 set -e
 #git remote set-url origin git@github.com:nicksiv/nicksiv.github.io.git
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
-
+cd ~/nicksiv.github.io
 # Build the project.
 #hugo -t ezhil # if using a theme, replace with `hugo -t <YOURTHEME>`
 
