@@ -1,1 +1,3 @@
-# Notes index* [[../zk/2022-09-08-mimetism.md]]
+# Notes index
+
+* [[../zk/2022-09-08-mimetism.md]]
