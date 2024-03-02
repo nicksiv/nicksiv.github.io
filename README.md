@@ -1,3 +1,7 @@
-# Nick Sivridis public notes
+# This is my public notes space
 
-All notes at <https://nicksiv.github.io/index/index>
+Hello, this is Nicolas.
+
+Welcome to my public notes web space.
+
+For the time being, you can browse the [notes index](https://nicksiv.github.io/index/index).
