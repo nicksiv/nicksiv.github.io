@@ -1,0 +1,17 @@
+# cat trouble
+
+Here's one situation I've never thought about getting into. A cat into my car engine!
+
+As cute as it sounds, it something pretty stresfull for many reasons. The cat maybe is unable to get out. It may be days in there ready to die or most importantly, you can turn on the engine and kill it (along with a big part of your engine!)
+
+All of those thoughts crossed my mind while I was working at the office, having parked my car knowing I had a cat inside. I tried to get it out, stopped the car, poured some water into the engine (I couldn't reached it anyway) and thought it had left. I heard no meaows and I was already late.
+
+In the afternoon I went back to my car and this time looked up more carefully (I had the space and time available), and there it was, little paws under my car in an unreachable place. I called the car help and while I was waiting, I've decided to use the world's collective knowledge. The internet! First in search results, some lady who managed to get a cat out of her engine by playing youtube videos with cat sounds!
+
+Great idea I thought and got right to it. The little cat responded right away to my phone's recorded cat. It came out but afraid of me and jumped right in.
+
+I was relieved that it was not hurt, jumpy and could get in and out whenever it wanted. Then the guy from the car help came and helped me out by pouring some water while I was playing the cat sounds.
+
+Problem solved!
+
+    #gzk  
