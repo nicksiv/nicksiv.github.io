@@ -1,6 +1,13 @@
-# This is my public notes space
+# nyk0
+*retired cybernaut and experimenting technomage*
+welcome to my personal web-space!
 
-Hello, this is Nicolas.
+<img style="border-radius:80px;" src="profile.jpg" />
+
+### Links
+* [Fediverse](https://octodon.social/@nicksiv)
+* [Github](https://github.com/nicksiv)
+* [Last.fm](https://www.last.fm/user/nicksiv)
 
 Welcome to my public notes web space.
 
