@@ -1,7 +1,5 @@
-# Notes index
+# Note index
 
-* 2024-03-04 14:19:24 [cat trouble](../zk/cat-trouble.md)
-* 2024-03-04 13:56:21 [So vast the music...](../zk/2023-02-10-so-vast-the-music.md)
-* 2024-03-03 19:42:37 [Inspiring emacs talks](../zk/20231208-inspiring-emacs-talks.md)
-* 2024-03-02 12:04:02 [The last guardian (PS4)](../zk/games202401.md)
-* 2024-03-02 10:59:52 [Mimetism](../zk/2022-09-08-mimetism.md)
+* 20240802135659	[Writing and note-taking in Emacs](../zk/20240802135659.md)
+* 20240803091234	[Emacs looks and eye candy](../zk/20240803091234.md)
+* 20240803120531	[Emacs links and community websites](../zk/20240803120531.md)
