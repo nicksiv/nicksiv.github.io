@@ -33,9 +33,11 @@ h3{
     font-weight:bold;
 }
 
-ul{
-    list-style:none;
+
+nav ul li{
+    display: inline;
 }
+
 img {
     max-width:100%;
     height:auto;

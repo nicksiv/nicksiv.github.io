@@ -29,3 +29,4 @@ for filename in list_of_files:
         os.system("cat "+ f + " >> " + d)
         os.system("cat "+ foot + " >> " + d)
 
+print("site updated!")
