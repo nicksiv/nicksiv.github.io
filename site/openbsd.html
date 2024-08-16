@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>nyk0's web</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <header>
+	<a style="text-decoration:none;color:black;" href="index.html">
+	<img style="border-radius:80px;width:70px;padding-top:16px;" align="left" src="img/profile.jpg" />
+        <htitle style="font-family:courier;">nyk0</htitle>
+	</a>
+	<nav>
+	  <ul>
+	    <li><a href="index.html">home</a></li>
+	    <li><a href="notes.html">notes</a></li>
+	    <li><a href="links.html">links</a></li>
+	    <li><a href="pagelist.html">index</a></li>	    
+
+	  </ul>
+	</nav>
+        </header>
+
+      <main>
+<h1>openBSD configuration</h1>
+
+
+<h2>Configure wifi</h2>
+<pre><code>
+ifconfig iwn0 up
+ifconfig iwn0 scan
+ifconfig iwn0 nwid SSID_name wpakey "password"
+dhclient iwn0
+
+# make it permanent 
+# create /etc/hostname.iwn0
+# add more join commands to connect with priority
+join "SSID" wpakey "password"
+dhcp
+inet6 autoconf
+up powersave
+</code></pre>
+
+<h2>Configure apmd for laptop</h2>
+<pre><code>
+rcctl enable apmd
+rcctl set apmd flags -A
+rcctl start apmd
+</code></pre>
+
+<h2>Other configurations</h2>
+<pre><code>
+# Enable xenodm on startup
+rcctl enable xenodm
+
+# Configure desktop
+~/.xsession for xenodm autostart
+~/.xinitrc for startx
+
+# Configure doas
+echo 'permit username' > /etc/doas.conf
+
+# Touchpad fixes
+## /etc/wsconsctl.conf
+mouse.tp.tapping=1
+mouse.reverse_scrolling=1
+</code></pre>
+
+<h2>Updates</h2>
+<code>
+syspatch
+</code>
+
+<h2>Mount USB drive</h2>
+<pre><code>
+# Mounting USB flash drive
+sysctl hw.disknames
+disklabel sd2
+mount /dev/sd2i /mnt/usb
+</code></pre>
+
+<h2>Configuration files</h2>
+<ul>
+  <li>/etc/hostname.iwn0
+  <li>/etc/wsconsctl.conf
+  <li>~/.xsession
+  <li>~/.cwm
+</ul>
+
+<h2>Resources</h2>
+<ul>
+<li><a href="https://www.c0ffee.net/blog/openbsd-on-a-laptop">https://www.c0ffee.net/blog/openbsd-on-a-laptop</a>
+<li><a href="https://romanzolotarev.com/openbsd/install.html">https://romanzolotarev.com/openbsd/install.html</a>
+<li><a href="https://jacekkowalczyk82.github.io/update/manuals/bsd/2020/10/21/setup-openbsd-at-thinkpad-x240.html">Setup OpenBSD at thinkpad x240 - Jacek Kowalczyk @ IT World</a>
+<li><a href="https://dataswamp.org/~james/openbsd.html">https://dataswamp.org/~james/openbsd.html</a>
+<li><a href="https://www.openbsdhandbook.com">https://www.openbsdhandbook.com</a>
+<li><a href="https://www.bsdhowto.ch/">https://www.bsdhowto.ch/</a>
+  </ul>
+
+        </main>
+        <footer>
+           Under construction -- (c) 2024 by nyk0
+        </footer>    
+    </body>
+</html>
