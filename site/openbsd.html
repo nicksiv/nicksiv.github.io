@@ -22,10 +22,10 @@
         </header>
 
       <main>
-<h1>openBSD configuration</h1>
-
-
-<h2>Configure wifi</h2>
+<h2>openBSD configuration</h2>
+<p>I'm experimenting regularly to setup openBSD as a desktop OS.
+<p>&nbsp;
+<h3>Configure wifi</h3>
 <pre>
 ifconfig iwn0 up
 ifconfig iwn0 scan
@@ -41,14 +41,14 @@ inet6 autoconf
 up powersave
 </pre>
 
-<h2>Configure apmd for laptop</h2>
+<h3>Configure apmd for laptop</h3>
 <pre>
 rcctl enable apmd
 rcctl set apmd flags -A
 rcctl start apmd
 </pre>
 
-<h2>Other configurations</h2>
+<h3>Other configurations</h3>
 <pre>
 # Enable xenodm on startup
 rcctl enable xenodm
@@ -66,12 +66,12 @@ mouse.tp.tapping=1
 mouse.reverse_scrolling=1
 </pre>
 
-<h2>Updates</h2>
+<h3>Updates</h3>
 <code>
 syspatch
 </code>
 
-<h2>Mount USB drive</h2>
+<h3>Mount USB drive</h3>
 <pre>
 # Mounting USB flash drive
 sysctl hw.disknames
@@ -79,7 +79,7 @@ disklabel sd2
 mount /dev/sd2i /mnt/usb
 </pre>
 
-<h2>Configuration files</h2>
+<h3>Configuration files</h3>
 <ul>
   <li>/etc/hostname.iwn0
   <li>/etc/wsconsctl.conf
@@ -87,7 +87,7 @@ mount /dev/sd2i /mnt/usb
   <li>~/.cwm
 </ul>
 
-<h2>Resources</h2>
+<h3>Resources</h3>
 <ul>
 <li><a href="https://www.c0ffee.net/blog/openbsd-on-a-laptop">https://www.c0ffee.net/blog/openbsd-on-a-laptop</a>
 <li><a href="https://romanzolotarev.com/openbsd/install.html">https://romanzolotarev.com/openbsd/install.html</a>

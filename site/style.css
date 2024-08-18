@@ -8,7 +8,7 @@
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    --emphasis: yellow;
+    --emphasis: #ffe68d;
     --indexback: lavender;
 }
 
@@ -20,20 +20,22 @@ body, h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
     font-weight: normal;
+
+    clear:both;
 }
 
 body {
     margin-left:20px;
-
+    max-width:650px;
 }
 
 p {
     line-height: 1.5em;
+    
 }
 
 pre {
     border:1px solid black;
-    width:80%;
     padding:10px;
     background:var(--indexback);
 }
@@ -53,12 +55,17 @@ htitle{
 
 h1,h2,h3{
     font-weight:bold;
+    max-width:400px; 
 }
 
-
+nav ul, idx ul{
+    padding:inherit;
+}
 nav ul li{
     display: inline;
     padding:6px;
+    list-type:none;
+    white-space:pre;
 }
 
 nav ul li a{
