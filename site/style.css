@@ -38,7 +38,13 @@ pre {
     background:var(--indexback);
 }
 
+code{
+    font-size:14px;
+    padding-left:6px;
+    padding-right:6px;
+    background:var(--indexback);
 
+}
 htitle{
     font-size:4em;
     font-weight:bold;
