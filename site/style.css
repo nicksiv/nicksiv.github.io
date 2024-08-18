@@ -8,6 +8,8 @@
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
+    --emphasis: yellow;
+    --indexback: lavender;
 }
 
 *, *:before, *:after {
@@ -41,7 +43,39 @@ nav ul li{
     display: inline;
 }
 
+nav ul li a{
+    text-decoration:none;
+}
+
+idx ul li{
+    display: inline;
+    border:1px solid gray;
+    padding:4px;
+    border-radius:10px;
+    background:var(--indexback);
+}
+
+idx ul li a{
+    text-decoration:none;
+}
+
+idx ul li a:hover{
+    background:none;
+}
+
+idx ul li:hover{
+    background:var(--emphasis);
+}
+
 img {
     max-width:100%;
     height:auto;
+}
+
+a {
+    color:black;
+}
+
+a:hover {
+    background:var(--emphasis);
 }
