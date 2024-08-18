@@ -24,8 +24,19 @@ body, h1, h2, h3, h4, h5, h6, p {
 
 body {
     margin-left:20px;
+
 }
 
+p {
+    line-height: 1.5em;
+}
+
+pre {
+    border:1px solid black;
+    width:80%;
+    padding:10px;
+    background:var(--indexback);
+}
 
 
 htitle{
@@ -41,10 +52,12 @@ h1,h2,h3{
 
 nav ul li{
     display: inline;
+    padding:6px;
 }
 
 nav ul li a{
-    text-decoration:none;
+    text-decoration:underline;
+
 }
 
 idx ul li{

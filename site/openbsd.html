@@ -26,7 +26,7 @@
 
 
 <h2>Configure wifi</h2>
-<pre><code>
+<pre>
 ifconfig iwn0 up
 ifconfig iwn0 scan
 ifconfig iwn0 nwid SSID_name wpakey "password"
@@ -39,17 +39,17 @@ join "SSID" wpakey "password"
 dhcp
 inet6 autoconf
 up powersave
-</code></pre>
+</pre>
 
 <h2>Configure apmd for laptop</h2>
-<pre><code>
+<pre>
 rcctl enable apmd
 rcctl set apmd flags -A
 rcctl start apmd
-</code></pre>
+</pre>
 
 <h2>Other configurations</h2>
-<pre><code>
+<pre>
 # Enable xenodm on startup
 rcctl enable xenodm
 
@@ -64,7 +64,7 @@ echo 'permit username' > /etc/doas.conf
 ## /etc/wsconsctl.conf
 mouse.tp.tapping=1
 mouse.reverse_scrolling=1
-</code></pre>
+</pre>
 
 <h2>Updates</h2>
 <code>
@@ -72,12 +72,12 @@ syspatch
 </code>
 
 <h2>Mount USB drive</h2>
-<pre><code>
+<pre>
 # Mounting USB flash drive
 sysctl hw.disknames
 disklabel sd2
 mount /dev/sd2i /mnt/usb
-</code></pre>
+</pre>
 
 <h2>Configuration files</h2>
 <ul>
