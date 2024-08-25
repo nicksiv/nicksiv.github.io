@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>nyk0's web</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+      <header>
+	<a style="text-decoration:none;color:black;" href="index.html">
+	<img style="border-radius:80px;width:70px;padding-top:16px;" align="left" src="img/profile.jpg" />
+        <htitle style="font-family:courier;">nyk0</htitle>
+	</a>
+	<nav>
+	  <ul>
+	    <li><a href="index.html">home</a></li>
+	    <li><a href="about.html">about</a></li>
+	    <li><a href="links.html">links</a></li>
+	    <li><a href="pagelist.html">index</a></li>
+
+	  </ul>
+	</nav>
+        </header>
+
+      <main>
+<h2>Emacs Gnus</h2>
+<p>If you live inside emacs, having a simple way to check your email can be a life savior. Sometimes when I don't have my browser open and working inside a buffer, it is so simple to fire up gnus, which I have bound to a shortcut for quick access.
+<p>Making gnus to work under Gmail is pretty simple. I followed a tutorial from <a href="https://www.emacswiki.org/emacs/GnusTutorial">emacswiki</a>
+  and worked like a charm. 
+
+<p>The configuration is split in two parts. The first part goes into the emacs config (~/.emacs or init.el).
+
+<pre>
+(setq gnus-select-method '(nnimap "gmail"
+(nnimap-address "imap.gmail.com"); it could also be imap.googlemail.com if that's your server.
+(nnimap-server-port 993)
+(nnimap-stream ssl)))
+(setq message-send-mail-function 'smtpmail-send-it
+smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+smtpmail-auth-credentials '(("smtp.gmail.com" 587 "your_email@gmail.com" nil))
+smtpmail-default-smtp-server "smtp.gmail.com"
+smtpmail-smtp-server "smtp.gmail.com"
+smtpmail-smtp-service 587
+smtpmail-local-domain "yourdomain")
+(global-set-key [f8] 'gnus)
+
+</pre>
+
+<p>The last command is my personal keybinding for running gnus.
+
+<p>Secondly, a new file should be created, the <code>~/.authinfo</code>, which will contain sensitive login info. That's why I thought it is better to have this encrypted, so I saved it as <code>~/.authinfo.gpg</code>. Below is the file's contents:
+
+<code>machine imap.gmail.com login youremail password secret port 993</code>
+
+<p>Just edit the youremail and secret with your email and password. Now everytime you get to open gnus you will be prompted for the encryption key which you can save into your keyring.
+
+<h3>Some basic gnus keybindings</h3>
+<ul>
+<li> B-DEL : delete message
+<li> B-m : Move message to another group
+<li> GG : Find message on selected group
+<li> /o : Show all mails in message view
+<li> Cc Cs RET Cd : Sort newest to olders in message view
+<li> Cc Cs Ca : Sort by author
+<li> Cc Cs Cs : Sort by subject
+<li> g : Refresh (receive new mail)
+<li> c : catch up with folder (mark all as read)
+<li> L/l : Show all groups/unread groups
+<li> Gc : Customize group
+<li> ! or u : mark msg as important (always show)
+</ul>
+<ul></ul>
+        </main>
+        <footer>
+           Under construction -- (c) 2024 by nyk0
+        </footer>    
+    </body>
+</html>
