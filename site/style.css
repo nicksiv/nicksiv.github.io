@@ -105,4 +105,4 @@ a {
 a:hover {
     background:var(--emphasis);
 }
-.prive{visibility:none;}
+.prive{visibility:hidden;}
