@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>nyk0n0m1k0n</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    </head>
+    <body>
+      <header>
+	<a style="text-decoration:none;color:black;" href="index.html">
+	<img style="border-radius:80px;width:70px;padding-top:16px;" align="left" src="img/profile.jpg" />
+        <htitle style="font-family:courier;">nyk0</htitle>
+	</a>
+	<nav>
+	  <ul>
+	    <li><a href="index.html">home</a></li>
+	    <li><a href="about.html">about</a></li>
+	    <li><a href="links.html">links</a></li>
+	    <li><a href="pagelist.html">index</a></li>
+	    <li><a class="prive" href="../prv/index.html">personal</a></li>
+
+	  </ul>
+	</nav>
+        </header>
+
+      <main>
+<h2>Emacs google calendar</h2>
+
+<p>Due to lack of easy solutions to view my google calendar without having to open my browser, I have emacs downloading my calendar as ics.
+<p>I use my private address and make a diary out of it. Then it shows up in my agenda.
+<p>Of course I cannot create new entries, but it suits me fine.
+  <p>To update the calendar I run the function <code>nyko/getcals</code>
+
+<pre>
+  
+  ; DIARY WITH GOOGLE CALENDAR
+  (setq diaryDir "~/Documents/diary/")
+  (setq diary-file (concat diaryDir "nyk0"))
+  (setq org-agenda-include-diary t)
+  (setq org-agenda-insert-diary-extract-time t)
+  (add-hook 'diary-list-entries-hook 'diary-sort-entries t)
+  (add-hook 'diary-list-entries-hook 'diary-include-other-diary-files)
+  (add-hook 'diary-mark-entries-hook 'diary-mark-included-diary-files)
+  (setq diary-list-entries-hook '(diary-include-other-diary-files diary-sort-entries))
+
+  ; calendars you want to download
+  ; each item links to a remote iCal calendar
+  (setq calendars
+    '(
+      ("nyk0" . "private address of galendar file")
+       ))
+
+  (defun getcal (url file)
+  "Download ics file and add it to file"
+  (let ((tmpfile (url-file-local-copy url)))
+  (icalendar-import-file tmpfile file)
+  (kill-buffer (car (last (split-string tmpfile "/"))))))
+
+  (defun nyko/getcals ()
+  "Load a set of ICS calendars into Emacs diary files"
+  (interactive)
+  (find-file (concat diaryDir "nyk0"))
+  (erase-buffer)
+  (getcal "private address of google calendar" (concat diaryDir "nyk0"))
+  (kill-this-buffer)
+
+  )
+
+</pre>
+<ul></ul>
+        </main>
+        <footer>
+         last update: 2024-08-31 07:19 -- nyk0 © 2024 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> BY-NC-SA 4.0</a>
+        </footer>    
+    </body>
+</html>
+

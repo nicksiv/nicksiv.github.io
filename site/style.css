@@ -110,4 +110,10 @@ a {
 a:hover {
     background:var(--emphasis);
 }
+
+footer {
+    height:70px;
+      display: flex;
+  align-items: center;
+}
 .prive{visibility:hidden;}
