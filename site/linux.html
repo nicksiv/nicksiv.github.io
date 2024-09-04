@@ -50,11 +50,16 @@ General instructions for creating an idendity and encrypt/decrypt files with it.
    They can be copied to another computer using the <code>scp</code> command from one ~/.ssh folder to another but afterwards you still need to create an identity with <code>ssh-add</code> (although it's not considered a good practice)
    </p>
 
+    <h3>Image Magick</h3>
+<p>Resize images to another folder
+  <p><code>mogrify -path "new" -resize 50% -format jpg *.jpg</code>
+<p>Crop images to another folder
+  <p><code>mogrify -path "new" -crop 320x320+0+0 -format jpg *.jpg</code>
 <ul></ul>
 </main>
     </body>
         <footer>
-         last update: 2024-09-04 09:13 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+         last update: 2024-09-04 10:43 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
         </footer>    
 
 </html>
