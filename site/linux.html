@@ -55,11 +55,21 @@ General instructions for creating an idendity and encrypt/decrypt files with it.
   <p><code>mogrify -path "new" -resize 50% -format jpg *.jpg</code>
 <p>Crop images to another folder
   <p><code>mogrify -path "new" -crop 320x320+0+0 -format jpg *.jpg</code>
+
+    <h3>HD monitor resolution on Linux</h3>
+     <p>copy this to <code>/etc/X11/xorg.conf.d/10-monitor.conf</code>
+<pre>
+Section "Monitor"
+    Identifier "VGA-1"
+    Modeline "1920x1080R"  138.50  1920 1968 2000 2080  1080 1083 1088 1111 +hsync -vsync
+    Option "PreferredMode" "1920x1080R"
+EndSection
+</pre>
 <ul></ul>
 </main>
     </body>
         <footer>
-         last update: 2024-09-04 10:43 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+         last update: 2024-09-09 12:04 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
         </footer>    
 
 </html>
