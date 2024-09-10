@@ -25,7 +25,43 @@
         </header>
 
       <main>
-<p>There are 18 indexed pages<p>&nbsp;<p><h2>Index</h2><ul style='line-height:1.2em;list-style:none;'><li><a href=about.html>about</a></li><li><a href=art-gallery.html>art-gallery</a></li><li><a href=classical-styles.html>classical-styles</a></li><li><a href=dotfiles.html>dotfiles</a></li><li><a href=emacs-calendar.html>emacs-calendar</a></li><li><a href=emacs-talks.html>emacs-talks</a></li><li><a href=emacs-windows.html>emacs-windows</a></li><li><a href=emacs.html>emacs</a></li><li><a href=gnus.html>gnus</a></li><li><a href=links.html>links</a></li><li><a href=linux.html>linux</a></li><li><a href=music-explore.html>music-explore</a></li><li><a href=music-greek.html>music-greek</a></li><li><a href=music.html>music</a></li><li><a href=openbsd.html>openbsd</a></li><li><a href=organizing.html>organizing</a></li><li><a href=software.html>software</a></li><li><a href=tiddlywiki.html>tiddlywiki</a></li></ul></main>
+<h2>Emacs Windows installation</h2>
+
+<p><b>Warning:</b> Emacs under Windows is soo slow...
+
+<p>Below are the notes for required actions after installation of emacs on windows.
+
+<h3>Set home folder on Windows
+<p>Open Powershell in administrator mode and enter this line:
+<code>setx HOME %USERPROFILE%</code>
+
+<h3>Add to .emacs configuration file</h3>
+  <pre>
+;; Windows OS
+;; Settings specific for Windows locale saving style
+
+  (setq-default buffer-file-coding-system 'utf-8-unix)
+  (setq buffer-file-coding-system 'utf-8-unix)
+
+  (set-terminal-coding-system 'utf-8)
+  ;(set-language-environment 'utf-8)
+  (set-keyboard-coding-system 'utf-8)
+  (prefer-coding-system 'utf-8)
+  (setq locale-coding-system 'utf-8)
+  (set-default-coding-systems 'utf-8)
+  (set-terminal-coding-system 'utf-8)
+  (setenv "LC_ALL" "C")
+  </pre>
+  
+<h3>Using Doc-View for windows (pdf display)</h3>
+<p>install <a href="https://chocolatey.org/install">chocolatey</a> 
+<p><code>choco install xpdf-utils ghostscript</code>
+
+<h3>Gnus use of PGP for Windows</h3>
+<p><code>choco install gnupg</code>
+
+<ul></ul>
+</main>
     </body>
         <footer>
          last update: 2024-09-10 20:25 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>

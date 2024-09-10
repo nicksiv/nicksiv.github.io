@@ -65,11 +65,25 @@ Section "Monitor"
     Option "PreferredMode" "1920x1080R"
 EndSection
 </pre>
+
+<h3>Correct time when dual booting Windows</h3>
+     <p>Linux part commands
+	 <pre>
+	   sudo ntpdate pool.ntp.org
+	   sudo hwclock --systohc --utc
+	   sudo timedatectl set-local-rtc 1
+	 </pre>
+	 <p>Windows part Regedit .reg file
+	     <pre>
+	       Windows Registry Editor Version 5.00
+	       [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+	       "RealTimeIsUniversal"=dword:00000001
+		 </pre>
 <ul></ul>
 </main>
     </body>
         <footer>
-         last update: 2024-09-09 12:04 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+         last update: 2024-09-10 20:15 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
         </footer>    
 
 </html>
