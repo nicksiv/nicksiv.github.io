@@ -30,6 +30,28 @@
 <h3>Create zip archive</h3>
 <p>add -e flag to encrypt
 <p><code>zip -r /tmp/ziparchive.zip ~/Documents/</code>
+
+<h3>Create bootable USB</h3>
+<p><code>sudo dd bs=4M if=~/Downloads/linux-2016.09.03.iso of=/dev/sdb && sync</code>
+
+  <h3>Find examples</h3>
+  <pre>
+    
+    # find files or directories:
+    find /usr -name gcc
+    # find files
+    find /usr -type f -name test1
+    # find directories
+    find /usr -type d -name gcc
+    # find by modified date (3 days)
+    find / -ctime 3
+    # find files (case insensitive)
+    find / -iname gcc 
+    # find files with size
+    find /etc -size +10M
+    # find and remove found files using -exec
+    find -name "*.swp" -ok rm {} ’;’
+  </pre>
   
 <h3>GPG/SSH setup - encrypt/decrypt files</h3>
 General instructions for creating an idendity and encrypt/decrypt files with it.
@@ -66,6 +88,7 @@ Section "Monitor"
 EndSection
 </pre>
 
+
 <h3>Correct time when dual booting Windows</h3>
      <p>Linux part commands
 	 <pre>
@@ -78,12 +101,18 @@ EndSection
 	       Windows Registry Editor Version 5.00
 	       [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
 	       "RealTimeIsUniversal"=dword:00000001
-		 </pre>
+	     </pre>
+
+	     <h3>Links</h3>
+	     <ul>
+	       <li><a href="https://devhints.io/bash">Bash scripting cheatsheet</a>
+	     </ul>
+	     
 <ul></ul>
 </main>
     </body>
         <footer>
-         last update: 2024-09-10 20:15 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+         last update: 2024-09-11 08:49 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
         </footer>    
 
 </html>

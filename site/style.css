@@ -25,7 +25,7 @@ body, h1, h2, h3, h4, h5, h6, p {
 
 body {
     margin-left:20px;
-    max-width:650px;
+    max-width:600px;
 }
 
 p {
@@ -59,7 +59,7 @@ htitle{
 
 h1,h2,h3{
     font-weight:bold;
-    max-width:400px;
+    max-width:750px;
     margin-top:20px;
 }
 
@@ -78,6 +78,14 @@ nav ul li a{
 
 }
 
+idx(new) ul li{
+    margin-left:30px;
+    line-height:0.2em;
+}
+
+idx {
+    line-height:200%;
+}
 idx ul li{
     display: inline;
     border:1px solid gray;
@@ -90,7 +98,7 @@ idx ul li a{
     text-decoration:none;
 }
 
-idx ul li a:hover{
+idx(old) ul li a:hover{
     background:none;
 }
 
@@ -116,6 +124,7 @@ footer {
       display: flex;
       align-items: center;
       border-top:1px dotted black;
+      font-size:80%;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
