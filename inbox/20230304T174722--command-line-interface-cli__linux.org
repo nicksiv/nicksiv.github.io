@@ -1,0 +1,22 @@
+#+title:      command line interface CLI
+#+date:       [2023-03-04 Σαβ 17:47]
+#+filetags:   :linux:
+#+identifier: 20230304T174722
+
+* [[https://stevelosh.com/blog/2012/10/the-homely-mutt/#s5-why-local-email][Mutt, why local email]]
+Guide to setup offline email, contains link for another tutorial for online IMAP gmail setup.
+* [[https://pspodcasting.net/dan/blog/2018/console_desktop.html][The console desktop]]
+So interesting, I've tried to do that once. But I didn't say my final word.
+I think I will try that again, now that zsh launches in every console window and has a tmux plugin!
+* https://opensource.com/article/20/6/productivity-tools-linux-terminal
+A list of ideas and applications to take advantage of the command line
+* [[https://leanpub.com/the-tao-of-tmux/read][The Tao of tmux (book)]]
+It's more than a manual for tmux. Teaches you the basics and guiding you through tutorials.
+* [[https://mamyn0va.github.io/2019/02/05/building-a-custom-ide-with-tmux][Building a Custom IDE with Tmux]]
+Instructions on customizing and using tmux to use for the console. With tmux the CLI becomes a proper window manager.
+* [[https://github.com/trimstray/the-book-of-secret-knowledge#cli-tools-toc][CLI Tools index from the Book of secret knowledge!]]
+A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more
+* https://www.anand-iyer.com/blog/2018/a-simpler-way-to-manage-your-dotfiles.html
+An way for managing dot files and sync with git.
+* [[https://exple.tive.org/blarg/2023/02/17/modern-problems-require-modern-solutions/][Modern Problems Require Modern Solutions]]
+Over on Mastodon I asked: “What modern utilities should be a standard part of a modern unixy distro? Why? I’ve got jq, pandoc, tldr and a few others on my list, but I’d love to know others.”

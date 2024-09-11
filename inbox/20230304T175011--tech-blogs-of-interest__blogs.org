@@ -1,0 +1,11 @@
+#+title:      tech blogs of interest
+#+date:       [2023-03-04 Σαβ 17:50]
+#+filetags:   :sources:
+#+identifier: 20230304T175011
+
+* Subset Park: Digital Minimalism for the Working Hacker
+https://blog.zdsmith.com/posts/digital-minimalism-for-the-working-hacker.html
+Interesting article, and the whole blog has interesting tech views, including culture-games (?)
+
+* [[https://atthis.link/blog/][Marc]]
+A cli guy using openBSD. Blogs from terminal.
