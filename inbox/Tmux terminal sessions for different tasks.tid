@@ -1,0 +1,21 @@
+created: 20231117122711789
+creator: nyko
+modified: 20231117122943292
+modifier: nyko
+tags: #cli
+title: Tmux terminal sessions for different tasks
+type: text/vnd.tiddlywiki
+
+An idea...
+
+
+<<<
+Another thing perhaps worth mentioning is tiling window management + tmux. 
+
+I have tmux / terminal sessions for different knowledge-management tasks (notetaking while reading an article is a different tmux session than daily agenda e.g.) bound to key combinations so that they can be accessed with low latency. The lowest-latency inbox is just a text field that appends to a file, for use when any distraction is to be avoided.
+<<<
+
+https://github.com/mwgkgk/dotfiles/blob/master/tmux/.tmux.conf
+
+source: https://www.lesswrong.com/posts/mbG3CZaX6657ttnCa/what-is-your-personal-knowledge-management-system#Tips_and_tricks__info_about_building_PKM_habits_
+
