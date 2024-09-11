@@ -1,0 +1,14 @@
+#+TITLE: nyk0 web - Todo list
+#+DATE:  [2024-09-11 Wed]
+
+** Todo items in pages <todo> tag
+   Add specific styling to those
+** Recent changes page
+** RSS feed
+** It would be good to have my feeds list published
+** Set <title> on each page according to its <h2>
+** Site Log?
+** Add banners to pages with a specific theme
+   movie screenshots, drawings etc
+** Breadcrumb links on each page's header
+** Site thumbnails: Try to make smaller in size with lower resolution
