@@ -1,0 +1,83 @@
+<h2>Linux</h2>
+
+<h3>Create zip archive</h3>
+<p>add -e flag to encrypt
+<p><code>zip -r /tmp/ziparchive.zip ~/Documents/</code>
+
+<h3>Create bootable USB</h3>
+<p><code>sudo dd bs=4M if=~/Downloads/linux-2016.09.03.iso of=/dev/sdb && sync</code>
+
+  <h3>Find examples</h3>
+  <pre>
+    
+    # find files or directories:
+    find /usr -name gcc
+    # find files
+    find /usr -type f -name test1
+    # find directories
+    find /usr -type d -name gcc
+    # find by modified date (3 days)
+    find / -ctime 3
+    # find files (case insensitive)
+    find / -iname gcc 
+    # find files with size
+    find /etc -size +10M
+    # find and remove found files using -exec
+    find -name "*.swp" -ok rm {} ’;’
+  </pre>
+  
+<h3>GPG/SSH setup - encrypt/decrypt files</h3>
+General instructions for creating an idendity and encrypt/decrypt files with it.
+
+<ul>
+  <li>Check for existing keys with <code>gpg --list-keys</code>
+  <li>Create new with <code>gpg --full-generate-key</code>
+  <li>if timeout: create ~/.gnupg/gpg.conf and add line: pinentry-mode loopback
+  <li>you can backup the whole .gnupg dir and transfer it (if using same versions). Otherwise use --export
+  <li>decrypt: <code>gpg --output outputfile.txt  --decrypt inputfile.gpg</code>
+  <li>encrypt: <code>gpg -r <email> -e <filetoencrypt></code>
+  <li>also editing the <em>gpg-agent.conf</em> you can set how many days the password is kept in cache and other options, like which pinentry program to use.
+</ul>
+
+   <h3>SSH keys</h3>
+    The SSH keys are used for secure connections using the SSH protocol. Instructions for creating can be found on <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">github help pages</a>
+    <p>
+   They can be copied to another computer using the <code>scp</code> command from one ~/.ssh folder to another but afterwards you still need to create an identity with <code>ssh-add</code> (although it's not considered a good practice)
+   </p>
+
+    <h3>Image Magick</h3>
+<p>Resize images to another folder
+  <p><code>mogrify -path "new" -resize 50% -format jpg *.jpg</code>
+<p>Crop images to another folder
+  <p><code>mogrify -path "new" -crop 320x320+0+0 -format jpg *.jpg</code>
+
+    <h3>HD monitor resolution on Linux</h3>
+     <p>copy this to <code>/etc/X11/xorg.conf.d/10-monitor.conf</code>
+<pre>
+Section "Monitor"
+    Identifier "VGA-1"
+    Modeline "1920x1080R"  138.50  1920 1968 2000 2080  1080 1083 1088 1111 +hsync -vsync
+    Option "PreferredMode" "1920x1080R"
+EndSection
+</pre>
+
+
+<h3>Correct time when dual booting Windows</h3>
+     <p>Linux part commands
+	 <pre>
+	   sudo ntpdate pool.ntp.org
+	   sudo hwclock --systohc --utc
+	   sudo timedatectl set-local-rtc 1
+	 </pre>
+	 <p>Windows part Regedit .reg file
+	     <pre>
+	       Windows Registry Editor Version 5.00
+	       [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+	       "RealTimeIsUniversal"=dword:00000001
+	     </pre>
+
+	     <h3>Links</h3>
+	     <ul>
+	       <li><a href="https://devhints.io/bash">Bash scripting cheatsheet</a>
+	     </ul>
+	     

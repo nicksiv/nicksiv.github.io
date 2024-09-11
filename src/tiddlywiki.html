@@ -1,0 +1,21 @@
+<h2>Tiddlywiki</h2>
+
+Articles and resources about the mighty Tiddlywiki.
+
+<h3>Guides</h3>
+<ul>
+  <li><a href="https://talk.tiddlywiki.org/t/git-saver-with-gitlab/726">Gitsaver with GitLab</a>
+<li><a href="https://morosanuae.github.io/tw-icons/">Extra Tiddlywiki icons</a>
+</ul>
+
+<h3>Code</h3>
+<ul>
+<li>Make Tiddlywiki available on LAN
+<p>(applicable to the nodeJS version)
+<p>Adding the host=0.0.0.0 parameter to the –listen command will make the wiki available on the whole LAN typing the ip address of the pc eg: 192.168.1.11:8181
+  <pre>tiddlywiki C:\Users\nyko\Documents\wiki --listen port=8181 anon-username=kyr0ss host=0.0.0.0</pre>
+
+  <li>Bookmarklet to copy site with title as Tiddlywiki link
+    <p>When there is a need to add a hyperlink to your wiki, this bookmarklet give you the ability to get the site's title as well in tiddlywiki format into the clipboard, ready to get pasted into a tiddler.
+      <pre>javascript:(function()%7Blet%20sel=document.getSelection();let%20selText=%22%22;const%20reference=%60%5B%5B$%7Bdocument.title%20%7D|$%7Blocation.href%20%7D%5D%5D%60;const%20selectedRanges=%5B%5D;if(sel.rangeCount%3E1)%7BselText=reference+%22%5Cn%22;for(let%20i=0;i%3Csel.rangeCount;i+=1)%7BselText+=%60%5Ct$%7Bsel.getRangeAt(i).toString().trim()%7D%3C%3C%3C%20%5Cn%60;selectedRanges.push(sel.getRangeAt(i))%7D%7Delse%7BselText=sel.toString().trim();if(selText.length)%7BselectedRanges.push(sel.getRangeAt(0));selText=%60%3C%3C%3C%5Cn%20$%7B%20selText%20%7D%5Cn%3C%3C%3C%20%60%7DselText+=reference%7Dconst%20ta=document.createElement(%22textarea%22);ta.textContent=%60$%7B%20selText%20%7D%60;document.body.appendChild(ta);const%20docSel=document.getSelection();docSel.removeAllRanges();ta.select();document.execCommand(%22copy%22);docSel.removeAllRanges();document.body.removeChild(ta);let%20newSel=document.getSelection();for(let%20i=0;i%3CselectedRanges.length;i+=1)%7BnewSel.addRange(selectedRanges%5Bi%5D)%7Dlet%20toaster=document.createElement(%22div%22);toaster.innerHTML=%60Copied!%60;toaster.style.position=%22fixed%22;toaster.style.display=%22block%22;toaster.style.right=%2210px%22;toaster.style.top=%2210px%22;toaster.style.backgroundColor=%22red%22;toaster.style.color=%22%23FFFFFF%22;toaster.style.padding=%225px%22;toaster.style.borderRadius=%225px%22;toaster.style.zIndex=%2299999%22;document.body.appendChild(toaster);setTimeout(function()%7Btoaster.style.opacity=0;toaster.style.transition=%22opacity%202s%22%7D,2000);setTimeout(function()%7Bdocument.body.removeChild(toaster)%7D,4000)%7D)();</pre>
+</ul>

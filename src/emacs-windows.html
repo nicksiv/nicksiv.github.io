@@ -1,0 +1,35 @@
+<h2>Emacs Windows installation</h2>
+<p>Notes for required actions after installation of emacs on windows.
+<p><b>Warning:</b> Emacs under Windows is soo slow...
+
+
+
+<h3>Set home folder on Windows
+<p>Open Powershell in administrator mode and enter this line:
+<code>setx HOME %USERPROFILE%</code>
+
+<h3>Add to .emacs configuration file</h3>
+  <pre>
+;; Windows OS
+;; Settings specific for Windows locale saving style
+
+  (setq-default buffer-file-coding-system 'utf-8-unix)
+  (setq buffer-file-coding-system 'utf-8-unix)
+
+  (set-terminal-coding-system 'utf-8)
+  ;(set-language-environment 'utf-8)
+  (set-keyboard-coding-system 'utf-8)
+  (prefer-coding-system 'utf-8)
+  (setq locale-coding-system 'utf-8)
+  (set-default-coding-systems 'utf-8)
+  (set-terminal-coding-system 'utf-8)
+  (setenv "LC_ALL" "C")
+  </pre>
+  
+<h3>Using Doc-View for windows (pdf display)</h3>
+<p>install <a href="https://chocolatey.org/install">chocolatey</a> 
+<p><code>choco install xpdf-utils ghostscript</code>
+
+<h3>Gnus use of PGP for Windows</h3>
+<p><code>choco install gnupg</code>
+
