@@ -1,0 +1,26 @@
+created: 20220702182632523
+creator: nyko
+modified: 20230627051841151
+modifier: nyko
+tags: List pub
+title: Tiddlywiki Articles & Videos
+type: text/vnd.tiddlywiki
+
+!! Articles
+* [[An opinionated approach to TiddlyWiki|https://lesser.occult.institute/an-opinionated-approach-to-tiddlywiki]]
+* [[TiddlyWiki5, Raspberry Pi and Vim: A guide for the command line aficionado|https://www.preciouschicken.com/blog/posts/tiddlywiki5-raspberry-pi-guide/]]
+* [[TiddlyWiki: Getting Started with digital gardens, networked thinking and non-linear research — Babycastles|https://www.babycastles.com/babycastles-academy/tiddlywiki]]
+* [[Hack Your Life With A Private Wiki Notebook, Getting Things Done, And Other Systems|http://webseitz.fluxent.com/wiki/HackYourLifeWithAPrivateWikiNotebookGettingThingsDoneAndOtherSystems]]
+* [[Font converter to css (to include into TW as CSS)|https://transfonter.org/]]
+* Understanding TW: https://groktiddlywiki.com/read/
+* [[Scripts in Tiddlywiki — codes, macros, and solutions in TW|https://kookma.github.io/TW-Scripts/]]
+* A ton of TW [[Resources|https://dynalist.io/d/zUP-nIWu2FFoXH-oM7L7d9DM]]
+* Github source of TW https://github.com/Jermolene/TiddlyWiki5
+* [[Build a deep, lasting understanding of TiddlyWiki|https://groktiddlywiki.com/read/]]
+* [[Conversation about Tiddlyhost & TiddlyWiki-Hacker News|https://news.ycombinator.com/item?id=31517039]]
+* [[Migrate Tiddlywiki to org-roam - Part 1: Export Tiddlers - blog.dornea.nu|https://blog.dornea.nu/2022/09/03/migrate-tiddlywiki-to-org-roam-part-1-export-tiddlers/]]
+** There are many references in this article to nodejs commands. Very useful!
+
+!! Video resources
+* [[Talks with Jeremy Ruston, the creator|https://www.youtube.com/c/JeremyRuston/videos]]
+* [[Anne Laure (Ness Labs) tips|https://www.youtube.com/watch?v=vuU3MrxdKcU]]

@@ -1,0 +1,31 @@
+created: 20210809082836834
+creator: kyr0ss
+modified: 20230627051641077
+modifier: nyko
+tags: Meta pub
+title: Tiddlywiki desktop installation
+type: text/vnd.tiddlywiki
+
+Installation steps of the nodejs version on an [[UbuntuOS]] Linux machine's terminal
+
+; 1. Install the nodeJS engine 
+: `sudo apt install nodejs npm`
+
+; 2. Install tiddlywiki
+: `sudo npm install -g tiddlywiki`
+
+; 3. Create the new wiki on a new empty folder
+: `tiddlywiki ~/wiki/ --init server`
+
+; 4. Run the newly created tiddlywiki with a default user to sign edits
+: `tiddlywiki ~/wiki/ --listen anon-username=<myusername>`
+
+; 5. Visit your new wiki!
+: Navigate to `127.0.0.1:8080` with your web browser
+
+;Run the wiki on startup
+: Add the command from step 4 into the ''startup'' scripts of your Linux installation
+: or use [[Autostart Nodejs tiddlywiki as a service]]
+;Windows installation
+: Use the installer from https://nodejs.org/en/download/current/
+: Open the command prompt and start from step 3.
