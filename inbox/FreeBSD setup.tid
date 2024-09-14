@@ -1,0 +1,55 @@
+created: 20201024142318752
+creator: kyr0ss
+modified: 20240708080622630
+modifier: nyko
+tags: Linux
+title: FreeBSD setup
+type: text/vnd.tiddlywiki
+
+Commands to setup the system after installation
+Used youtube freeBSD installation videos: 
+[[FreeBSD Fridays: FreeBSD InstallFest Part 1 - YouTube|https://www.youtube.com/watch?v=K8cBa8y3RNQ&list=PLugwS7L7NMXwC51yLI7br7rOLZw4UxuVj&index=2&app=desktop]]
+
+[[DistroWatch article about dual-booting installation|https://distrowatch.com/weekly-mobile.php?issue=20181001#qa]]
+
+* While installing
+** Make sure to add normal user to the group ''wheel''
+
+* First of all remove the beep sound
+** `sysctl kern.vt.enable_bell=0`
+** `echo "kern.vt.enable_bell=0" >> /etc/sysctl.conf`
+
+* Shutting down
+** `shutdown -p now`
+
+!! Rest of commands
+```
+freebsd-update fetch install
+pkg update
+pkg upgrade
+pkg install sudo
+visudo (uncomment line #%wheel...)
+pkg install xorg dbus
+sysrc dbus_enable="YES"
+sysrc moused_enable="YES"
+service dbus start
+service moused start
+dbus-uuidgen > /etc/machine-id (I don't know why)
+```
+
+!! Install Desktop (xfce)
+```
+pkg install xfce
+sysrc hald_enable="YES"
+vi .xinitrc (for each user you want startx to open xfce)
+    add the line "exec xfce4-session"
+startx
+```
+
+!! Install Intel GPU Drivers
+```
+pkg install drm-kmod
+vi /etc/rc.conf
+  add the line -->  kld_list="/boot/modules/i915kms.ko"
+sudo pw groupmod video -m nick
+```
