@@ -11,7 +11,7 @@
 5	emacs
 8	classical-styles
 11	emacs-windows
-0	unfiled
+0	unfiled-notes
 5	cwm
 5	wikis
 11	emacs-talks
@@ -19,3 +19,4 @@
 11	emacs-calendar
 99	links
 99	about
+11	emacs-links
