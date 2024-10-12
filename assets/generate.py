@@ -14,6 +14,7 @@ assetFolder=rootFolder+"assets/"
 destFolder=rootFolder+"site/"
 i=os.path.join(assetFolder,"index.txt")
 pages=[]
+posts=[]
 head=os.path.join(assetFolder,"header.html")
 foot=os.path.join(assetFolder,"footer.html")
 
@@ -89,6 +90,25 @@ def buildGallery():
 
     pages.append(["artgallery.html","artgallery"])
 
+def buildPostIndex():
+    global posts
+    tmp="/tmp/tmp.html"
+    paghtml="<h2>Blog</h2><ul style='line-height:1.2em;list-style:none;'>"
+    posts.sort(reverse=True)
+    for page in posts:
+        ttl=page[1]
+        ttl=ttl[:10]+": "+ttl[11:].replace("-"," ").capitalize()
+        paghtml+="<li><a href="+page[0]+">"+ttl+"</a></li>"
+    paghtml+="</ul>"
+    with open(tmp, "w") as myfile:
+        myfile.write("<p>There are "+str(len(posts))+" indexed posts<p>&nbsp;<p>"+paghtml)
+        myfile.close()
+
+    d=os.path.join(destFolder,"blog.html")
+    os.system("cat "+ head + " > " + d)
+    os.system("cat "+ tmp + " >> " + d)
+    os.system("echo '"+ setModiFooter(foot,d,datetime.datetime.now()) + "' >> " + d)
+
     
 def buildPageIndex():
     global pages
@@ -136,6 +156,7 @@ def publish():
     list_of_files = sorted( filter( lambda x: os.path.isfile(os.path.join(srcFolder, x)), os.listdir(srcFolder) ),reverse=False )
 
     global pages
+    global posts
     global pageindexCount
     global forceUpdate
     global head
@@ -144,8 +165,11 @@ def publish():
     for filename in list_of_files:
         f=os.path.join(srcFolder,filename)
         d=os.path.join(destFolder,filename)
-        if filename!="index.html": 
-            pages.append([filename,filename.replace(".html","")])
+        if filename!="index.html":
+            if filename.startswith("201") or filename.startswith("202"):
+                posts.append([filename,filename.replace(".html","")])
+            else:
+                pages.append([filename,filename.replace(".html","")])
 
         srcfiletime = datetime.datetime.fromtimestamp(os.stat(f).st_mtime)
         if os.path.isfile(d):
@@ -159,7 +183,7 @@ def publish():
             os.system("cat "+ f + " >> " + d)
 
             # child pages links
-            if filename!="index.html":
+            if filename!="index.html" and not filename.startswith("201") and not filename.startswith("202"):
                 childLinks=getChildren(filename.replace(".html",""))
                 os.system("echo '"+childLinks+"' >> " + d)
             #print(setModiFooter(foot,d,srcfiletime))
@@ -168,7 +192,7 @@ def publish():
     copySiteFiles()
     buildGallery()
     buildPageIndex()
-
+    buildPostIndex()
 
     print("site updated!")
     if forceUpdate==True:

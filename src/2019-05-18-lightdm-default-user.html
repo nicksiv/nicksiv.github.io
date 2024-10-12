@@ -1,0 +1,21 @@
+
+  <body>
+    <h2>Set default user on Debian’s logon screen (LightDM)</h2>
+      <p>After setting up Debian, and for a week, I needed to enter my
+      user name and my password to log on to my system. This is the
+      default behavior of LightDM (the login manager of Debian) for
+      maximum security.</p>
+      <p>As I got tired to enter my user name again and again, I
+      researched for a way to have LightDM fill the last entered user
+      name for me. As it turns out it is easy to setup.</p>
+      <p>All you have to do is edit the following file:</p>
+      <pre><code>/usr/share/lightdm/lightdm.conf.d/01\_debian.conf</code></pre>
+      <p>By typing in your terminal:</p>
+      <pre><code>sudo nano /usr/share/lightdm/lightdm.conf.d/01\_debian.conf</code></pre>
+      <p>Then change the command greeter-hide-users from false to
+      true.</p>
+      <pre><code> greeter-hide-users=true
+ </code></pre>
+      <p>Save the file (Ctrl+O) and exit (Ctrl+X)</p>
+      <p>Log out and you have fixed it.</p>
+  </body>

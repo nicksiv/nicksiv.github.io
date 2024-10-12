@@ -1,0 +1,50 @@
+
+  <body>
+    <h2>Todo-txt: Setting up in Ubuntu</h2>
+      <p>Today, I’m Setting up todo-txt today into my Ubuntu, using the
+      repository version which now exists in every major distro to my
+      great satisfaction!</p>
+      <p>Todo-txt is a fantastic set of scripts which allow you to
+      manage your todo-list write from the terminal.</p>
+      <p>It is very easy to setup todo-txt by using the site
+      documentation at <a
+      href="http://www.todotxt.org">http://www.todotxt.org</a> but the
+      same instructions can get a bit confusing if you install it using
+      the repository installation.</p>
+      <p>I found the repository installation easier and faster, so I
+      think it was worth the effort to write a detailed installation
+      tutorial.</p>
+      <p>So the first thing to do is to install todo-txt:</p>
+      <p><code>sudo apt-get install todo-txt</code></p>
+      <p>After that, you need to copy the default configuration file
+      from /etc/todo-txt to a new created directory into your home
+      folder (.todo-txt)</p>
+      <p><code>sudo cp /etc/todo-txt/config ~/.todo-txt/</code></p>
+      <p>Then you need to change the owner of the config file to your
+      username:</p>
+      <p><code>sudo chown myname ~/.todo-txt/config</code></p>
+      <p>Next step is to tell todo-txt where your files will reside.
+      Edit the config file:</p>
+      <p><code>nano ~/.todo-txt/config</code></p>
+      <p>and change this line to your desired directory:</p>
+      <p><code>export TODO\_DIR=~/todo\_files</code></p>
+      <p>Additionally, I like to have my todos sorted by priority first
+      so I add the line to the end of the config:</p>
+      <p><code>export TODOTXT\_SORT\_COMMAND='env LC\_COLLATE=C sort -k 2,2 -k 1,1n'</code></p>
+      <p>The final step is to make some changes to the ~/.bashrc file to
+      make things easier. I add those lines:</p>
+      <pre><code>export TODOTXT\_DEFAULT\_ACTION=ls
+alias t=&quot;todo-txt -t&quot;</code></pre>
+      <p>Now you can type <strong>t</strong> in any terminal window and
+      get a list of your tasks by priority. Add any command after the t
+      to tell todo-txt what you want it to do (eg. t add My first task
+      <span class="citation" data-cites="pc">@pc</span>). The -t flag
+      ensures that new tasks will get the creation date.</p>
+      <p>One other change I had to make was to make the bash completion
+      script executable by calling</p>
+      <p><code>sudo chmod +x /usr/share/bash-completion/completions/todo-txt</code></p>
+      <p>This is why the completion didn’t work right after setting it
+      up.</p>
+      <p>That’s all! I hope you will find it easy and useful like I
+      did.</p>
+  </body>

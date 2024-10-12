@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>nyk0n0m1k0n</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    </head>
+    <body>
+      <header>
+	<a style="text-decoration:none;color:black;" href="index.html">
+	<img style="border-radius:80px;width:70px;padding-top:16px;" align="left" src="img/profile.jpg" />
+        <htitle style="font-family:courier;">nyk0</htitle>
+	</a>
+	<nav>
+	  <ul>
+	    <li><a href="index.html">home</a></li>
+	    <li><a href="about.html">about</a></li>
+	    <li><a href="links.html">links</a></li>
+	    <li><a href="pagelist.html">index</a></li>
+
+	  </ul>
+	</nav>
+        </header>
+
+      <main>
+
+  <body>
+    <h2>Waking up Linux from USB keyboard</h2>
+      <p>⌨</p>
+      <p>Since I’ve got a spare old laptop in my hands, I’ve been
+      thinking of turning it into a small media server. The problem is I
+      want to connect it to a TV set, but without opening its lid since
+      the screen is not working.</p>
+      <p>The power button is as usual under the lid so I needed to find
+      a way of switching it on without opening the lid, by using an
+      external usb keyboard.<br />
+      Apparently there is a way to wake the computer from suspend by
+      enabling its specific USB port to power the computer. I found a
+      nice how-to here: <a
+      href="https://askubuntu.com/a/1213465">https://askubuntu.com/a/1213465</a>.
+      The script I chose to use enables all the USB ports. I would like
+      a cleaner approach of finding the specific USB port, but I
+      couldn’t make it.</p>
+      <p>After I ensured that the script works, I defined a shortcut key
+      to suspend the system, mapping the command
+      <code>systemctl suspend</code> to my <Super>+F12. Now I can wake
+      up my server to be by pressing any key.</p>
+  </body>
+</main>
+    </body>
+        <footer>
+         last update: 2024-10-12 07:03 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+        </footer>    
+
+</html>
+

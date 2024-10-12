@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>nyk0n0m1k0n</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    </head>
+    <body>
+      <header>
+	<a style="text-decoration:none;color:black;" href="index.html">
+	<img style="border-radius:80px;width:70px;padding-top:16px;" align="left" src="img/profile.jpg" />
+        <htitle style="font-family:courier;">nyk0</htitle>
+	</a>
+	<nav>
+	  <ul>
+	    <li><a href="index.html">home</a></li>
+	    <li><a href="about.html">about</a></li>
+	    <li><a href="links.html">links</a></li>
+	    <li><a href="pagelist.html">index</a></li>
+
+	  </ul>
+	</nav>
+        </header>
+
+      <main>
+
+  <body>
+    <h2>Orgmode caldav export at last!</h2>
+      <p>Today’s revelation: I learned that I can export all my dated
+      entries from my org-mode agenda files into an ics file.<br />
+      I saved this file to my NextCloud folder (by setting the
+      <code>org-icalendar-combined-agenda-file</code> variable) to
+      import the file into my android phone which is tricky. The events
+      are going into the default calendar of the device and there is no
+      standard way to erase it and update your events. For this to work,
+      I’m using another app, the simple calendar, which imports locally
+      the file and later, everything can be erased to import an
+      update.<br />
+      One change I had to make though, was to tell org-mode to include
+      all SCHEDULED and DEADLINE timestamps by customizing the group
+      <code>org-export-icalendar</code>. By default, org-mode exports
+      only active timestamps.</p>
+      <p>So, after doing that I figured: Caldav could work now.</p>
+      <p><a href="https://github.com/dengste/org-caldav"
+      class="uri">https://github.com/dengste/org-caldav</a><br />
+      And finally! Org-caldav works perfectly with my Nextcloud
+      calendar. I have tried it twice in the past and couldn’t get it to
+      work because of that little setting.</p>
+      <p>Needless to say, that info exists into the documentation. I
+      sould have RTFM…</p>
+  </body>
+</main>
+    </body>
+        <footer>
+         last update: 2024-10-12 07:03 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+        </footer>    
+
+</html>
+

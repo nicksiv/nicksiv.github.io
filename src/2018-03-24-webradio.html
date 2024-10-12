@@ -1,0 +1,39 @@
+
+  <body>
+    <h2>Webradio in the command line</h2>
+      <p>Since I discovered and learn to use emacs, I’m constantly
+      looking for ways to work faster with my computer. One of the
+      things that bothered me was the preparations I had to do when I
+      switched-on my computer for writing. It is an old computer and
+      hibernation under Linux doesn’t work, so once a day I have to wait
+      for my Ubuntu system to boot up, turn on some radio music and fire
+      up emacs.</p>
+      <p>I like listening to radio music lately, but opening the browser
+      just for that is an overkill. Sometimes I have fifteen minutes to
+      myself and all I want to do is write. Fire up a browser and it
+      seems like forever to get to your homepage!</p>
+      <p>The solution was simple. I installed <strong>mpg123</strong>, a
+      command-line audio player which can handle radio streams:</p>
+      <p>sudo apt-get install mpg123 (for Debian systems)</p>
+      <p>Then I grabbed the URL’s of my favorite radio stations and
+      created some aliases into my ~/.bashrc:</p>
+      <p>alias ert=‘mpg123 <a
+      href="http://radiostreaming.ert.gr/ert-deftero"
+      class="uri">http://radiostreaming.ert.gr/ert-deftero</a>’</p>
+      <p>That’s it! Now I open up just my terminal and by typing my
+      alias command the radio starts playing!</p>
+      <p>The trickier part was to find the URL’s of some radio stations.
+      Some sites had them hidden behind embedded web-players giving me a
+      hard time copying the statin’s URL. For some of those cases, I
+      found a workaround (works sometimes): If you right click the
+      web-player’s play button and select inspect element from Firefox,
+      you can search inside the page’s code for the word .mp3 and maybe
+      you’ll get lucky and get the hidden radio stream address!</p>
+      <p>Extra tip: mp3123 is so fantastic that you can use it to play
+      randomly your mp3 collection. I use the following command:</p>
+      <p>mpg123 -z ~/Music/*/*/*</p>
+      <p>Just change the directory name from /home/Music/ to your own
+      and press ‘h’ to see the available control commands while
+      listening to your first randomly selected track!</p>
+      <p><a href="http://mpg123.org/">mpg123 homepage</a></p>
+  </body>

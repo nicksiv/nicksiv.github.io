@@ -1,0 +1,52 @@
+
+  <body>
+    <h2>My Emacs writing setup</h2>
+      <h2 id="my-writing-setup">My writing setup</h2>
+      <p>I like to use Emacs for as much as I can. Because I love it.
+      It’s fast, open source and gives your fingers real superpowers. So
+      anything I write, posts, prose or whatever I use Emacs and I got
+      installed a package just for it. It’s called <strong>Writeroom
+      mode</strong> and I it’s available to me at the push of a
+      shortcut.</p>
+      <figure>
+      <img src="/images/wroom.png" alt="wroom" />
+      <figcaption aria-hidden="true">wroom</figcaption>
+      </figure>
+      <p>I will show you how to set it up along with some general
+      instructions:</p>
+      <h3 id="setup-packages-and-install-writeroom-mode-for-noobs">Setup
+      packages and install writeroom mode (for noobs)</h3>
+      <p>To use writeroom mode you need to have access to the melpa
+      package archive which is not setup by default into Emacs. Add the
+      following to your .emacs file to enable it:</p>
+      <p>;; Package setup (setq package-archives (quote ((“gnu” . “<a
+      href="http://elpa.gnu.org/packages/"
+      class="uri">http://elpa.gnu.org/packages/</a>”) (“melpa” . “<a
+      href="https://melpa.org/packages/"
+      class="uri">https://melpa.org/packages/</a>”))))</p>
+      <p>After that change, restart Emacs (or run a M-x eval-buffer) and
+      run M-x package-list-packages. You can search the list of packages
+      after appearing with C-s and find what you’re looking for, click
+      on it and install.</p>
+      <p><em>note: In emacs keyboard shortcuts M stands for Alt and C
+      for Control. So M-x means Alt+X</em></p>
+      <h2 id="my-function">My function</h2>
+      <p>Writeroom mode makes Emacs full screen for distraction-free
+      editing. But I needed bigger font for writing and the spellchecker
+      on. So I quickly made a function (you can add it to your .emacs
+      file after installing writeroom mode):</p>
+      <p>;; Activate writeroon and spellcheck (global-set-key [f8]
+      (lambda () (interactive)
+      (writeroom-mode)(flyspell-mode)(text-scale-set
+      1)(end-of-buffer)))</p>
+      <p>Now pressing F8 turns any buffer into a distraction free editor
+      with spell checking enabled. Writing in this environment feels
+      like typing on a real typewriter. It helps me focus so much that I
+      would recommend it to anyone who prefers minimal writing
+      environments.</p>
+      <p>You can customize additional settings of writeroom mode easily.
+      Just run M-x customize-group and enter writeroom.</p>
+      <p><a
+      href="https://github.com/joostkremers/writeroom-mode">Writeroom
+      Project page</a> by Joost Kremers</p>
+  </body>

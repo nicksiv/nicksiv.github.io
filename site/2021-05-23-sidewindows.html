@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>nyk0n0m1k0n</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    </head>
+    <body>
+      <header>
+	<a style="text-decoration:none;color:black;" href="index.html">
+	<img style="border-radius:80px;width:70px;padding-top:16px;" align="left" src="img/profile.jpg" />
+        <htitle style="font-family:courier;">nyk0</htitle>
+	</a>
+	<nav>
+	  <ul>
+	    <li><a href="index.html">home</a></li>
+	    <li><a href="about.html">about</a></li>
+	    <li><a href="links.html">links</a></li>
+	    <li><a href="pagelist.html">index</a></li>
+
+	  </ul>
+	</nav>
+        </header>
+
+      <main>
+
+  <body>
+    <h2>Installing Windows 10 on the side</h2>
+      <p>I needed to install MS Windows for work. I haven’t dual-booting
+      Windows since 2015, but our communication software which is
+      Microsoft Teams, is well known for missing important features in
+      Linux. In my <a href="mailto:work@home"
+      class="email">work@home</a> environment I need mainly the camera
+      background blur option and the ability to screen share just one
+      window and not my entire system. The downside of this, is the
+      Alt-tab window switching behavior which is customizable in Linux
+      (but not in Windows) and I could use it without problems into my
+      remote system.</p>
+      <p>So after making the choice, I made space on my HD (I tried
+      virtual box but Windows were very slow) but Windows wouldn’t
+      install because my laptop had MBR and not GPT records table.</p>
+      <p>So I used this: <a
+      href="https://serverfault.com/questions/963178/how-do-i-convert-my-linux-disk-from-mbr-to-gpt-with-uefi"
+      class="uri">https://serverfault.com/questions/963178/how-do-i-convert-my-linux-disk-from-mbr-to-gpt-with-uefi</a></p>
+      <p>That way I created a GPT record and Windows was able to be
+      installed.</p>
+      <p>But I’ve lost my GRUB. The above’s article solution did not
+      cover this one so I needed to boot trough an Ubuntu live USB and
+      install Boot-Repair.</p>
+      <p><a href="https://help.ubuntu.com/community/Boot-Repair"
+      class="uri">https://help.ubuntu.com/community/Boot-Repair</a></p>
+      <p>In order to use it I had to disable legacy boot from BIOS and
+      after that booting with the Ubuntu live USB. Then, running the
+      application I used the recommended settings button and the problem
+      solved. Now I’m dual booting Windows in GPT mode.</p>
+  </body>
+</main>
+    </body>
+        <footer>
+         last update: 2024-10-12 07:03 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+        </footer>    
+
+</html>
+
