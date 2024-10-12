@@ -5,6 +5,7 @@ import os
 import shutil
 import datetime,time
 import sys
+import glob
 args=sys.argv
 
 username=os.getlogin()
@@ -156,7 +157,7 @@ def buildPageIndex():
             ttl=ttl[:10]+": "+ttl[11:].replace("-"," ").capitalize()
             latestindex+="<li><a href="+item[0]+">"+ttl+"</a></li>"
             postno+=1
-    latestindex+="</ul></idx2>"
+    latestindex+="<li><a href=blog.html>more...</a></ul></idx2>"
 
     # write index to the homepage
     with open(d, "r") as myfile:
@@ -168,6 +169,37 @@ def buildPageIndex():
         myfile.close()
 
 
+def buildRecent():
+    #recent pages
+    tmp="/tmp/tmp.html"
+    maxpages=30
+    thispage=0
+    recentList="<h2>Recent changes</h2><ul style='line-height:1.2em;list-style:none;'>"
+    
+    list_of_files = filter( os.path.isfile, glob.glob(srcFolder + '*') )    
+    # Sort list of files based on last modification time in ascending order
+    list_of_files = sorted( list_of_files, key = os.path.getmtime, reverse=True)
+    for file_path in list_of_files:
+        timestamp_str = time.strftime(  '%Y-%m-%d', time.localtime(os.path.getmtime(file_path)))
+        fnn=os.path.basename(file_path)
+        recentList+="<li><span class='timestamp'>"+timestamp_str+"</span>&nbsp;<a href='"+fnn+"'>"+fnn.split(".")[0]+"</a>"
+        thispage+=1
+        if thispage>maxpages:
+            break;
+    recentList+="</ul>"
+
+    with open(tmp, "w") as myfile:
+        myfile.write(recentList)
+        myfile.close()
+
+    d=os.path.join(destFolder,"recent.html")
+    os.system("cat "+ head + " > " + d)
+    os.system("cat "+ tmp + " >> " + d)
+    os.system("echo '"+ setModiFooter(foot,d,datetime.datetime.now()) + "' >> " + d)
+    pages.append(["recent.html","recent"])
+
+
+    
 def publish():
     # ============== Main routine start ==================================
     list_of_files = sorted( filter( lambda x: os.path.isfile(os.path.join(srcFolder, x)), os.listdir(srcFolder) ),reverse=False )
@@ -209,7 +241,7 @@ def publish():
     copySiteFiles()
     buildGallery()
     buildPostIndex()
-
+    buildRecent()
     buildPageIndex()
 
     print("site updated!")

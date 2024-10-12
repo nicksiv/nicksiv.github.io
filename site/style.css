@@ -104,6 +104,10 @@ idx ul li:hover{
     /* background:var(--emphasis); */
 }
 
+.timestamp{
+    font-family:courier;
+
+}
 img {
     max-width:100%;
     height:auto;
