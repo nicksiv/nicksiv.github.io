@@ -84,18 +84,22 @@ idx(new) ul li{
 }
 
 idx {
-    line-height:200%;
+    line-height:110%;
 }
 idx ul li{
-    display: inline;
-    border:1px solid gray;
+    /* display: inline; */
+    /* border:1px solid gray; */
     padding:4px;
-    border-radius:10px;
-    background:var(--indexback);
+    list-style:none;
+    margin-left: 25px;
+    border-left:12px solid var(--indexback);
+    /* border-radius:10px; */
+    /* background:var(--indexback); */
+
 }
 
 idx ul li a{
-    text-decoration:none;
+    /* text-decoration:none; */
 }
 
 idx(old) ul li a:hover{
@@ -103,7 +107,7 @@ idx(old) ul li a:hover{
 }
 
 idx ul li:hover{
-    background:var(--emphasis);
+    /* background:var(--emphasis); */
 }
 
 img {

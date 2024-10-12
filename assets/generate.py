@@ -108,6 +108,7 @@ def buildPostIndex():
     os.system("cat "+ head + " > " + d)
     os.system("cat "+ tmp + " >> " + d)
     os.system("echo '"+ setModiFooter(foot,d,datetime.datetime.now()) + "' >> " + d)
+    pages.append(["blog.html","blog"])
 
     
 def buildPageIndex():
@@ -130,7 +131,7 @@ def buildPageIndex():
     # ===== Index on index.html ==========
     d=os.path.join(destFolder,"index.html")
     zeroindex="<h3>notes & pages</h3><idx><ul>"
-
+    zlist=[]
     with open(i, "r") as myfile:
         lines = list(line for line in (l for l in myfile) if line)
         for line in lines:
@@ -138,8 +139,11 @@ def buildPageIndex():
             tabs=line.split("\t")
             if tabs[0]=="0":
                 fn=tabs[1]
-                zeroindex+="<li><a href="+fn+".html>"+fn+"</a></li> "
-
+                #zeroindex+="<li><a href="+fn+".html>"+fn+"</a></li> "
+                zlist.append(fn)
+    zlist.sort()
+    for item in zlist:
+        zeroindex+="<li><a href="+item+".html>"+item+"</a></li>"
     zeroindex+="</ul></idx>"
     # write index to the homepage
     with open(d, "r") as myfile:
@@ -191,8 +195,9 @@ def publish():
 
     copySiteFiles()
     buildGallery()
-    buildPageIndex()
     buildPostIndex()
+
+    buildPageIndex()
 
     print("site updated!")
     if forceUpdate==True:
