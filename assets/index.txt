@@ -1,6 +1,6 @@
 0	dotfiles
 0	linux
-0	openbsd
+0	blog
 0	artgallery
 0	software
 0	organizing
@@ -20,4 +20,4 @@
 99	links
 99	about
 11	emacs-links
-0	blog
+5	openbsd

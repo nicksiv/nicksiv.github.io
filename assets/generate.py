@@ -113,6 +113,7 @@ def buildPostIndex():
     
 def buildPageIndex():
     global pages
+    global posts
     tmp="/tmp/tmp.html"
     paghtml="<h2>Index</h2><ul style='line-height:1.2em;list-style:none;'>"
     pages.sort()
@@ -145,10 +146,22 @@ def buildPageIndex():
     for item in zlist:
         zeroindex+="<li><a href="+item+".html>"+item+"</a></li>"
     zeroindex+="</ul></idx>"
+    # latest posts
+    maxposts=3
+    postno=0
+    latestindex="<h3>latest thoughts</h3><idx2><ul>"
+    for item in posts:
+        if postno<maxposts:
+            ttl=item[1]
+            ttl=ttl[:10]+": "+ttl[11:].replace("-"," ").capitalize()
+            latestindex+="<li><a href="+item[0]+">"+ttl+"</a></li>"
+            postno+=1
+    latestindex+="</ul></idx2>"
+
     # write index to the homepage
     with open(d, "r") as myfile:
         ind=myfile.read()
-        ind=ind.replace("<nyk0index>",zeroindex)
+        ind=ind.replace("<nyk0index>",zeroindex+latestindex)
         myfile.close()
     with open(d, "w") as myfile:
         myfile.write(ind)
