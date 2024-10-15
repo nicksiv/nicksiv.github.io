@@ -22,3 +22,5 @@
 11	emacs-links
 5	openbsd
 0	recent
+8	80s-playlist
+8	albums

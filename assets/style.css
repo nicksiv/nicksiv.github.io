@@ -121,6 +121,15 @@ a:hover {
     background:var(--emphasis);
 }
 
+table {
+    border: 1px solid gray;
+    font-size: 10px;
+}
+
+.even, th {
+    background:var(--indexback);
+}
+
 footer {
     height:70px;
       display: flex;
