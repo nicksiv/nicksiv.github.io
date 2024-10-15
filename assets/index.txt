@@ -24,3 +24,4 @@
 0	recent
 8	80s-playlist
 8	albums
+8	all-music
