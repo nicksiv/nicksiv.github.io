@@ -1,7 +1,7 @@
 0	dotfiles
 0	linux
 0	blog
-0	artgallery
+0	artsy
 0	software
 0	organizing
 5	tiddlywiki
@@ -25,3 +25,6 @@
 8	80s-playlist
 8	albums
 8	all-music
+4	artgallery
+4	best-films
+4	1001-films
