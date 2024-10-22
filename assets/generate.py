@@ -94,7 +94,7 @@ def buildGallery():
 def buildPostIndex():
     global posts
     tmp="/tmp/tmp.html"
-    paghtml="<h2>Blog</h2><ul style='line-height:1.2em;list-style:none;'>"
+    paghtml="<title>nyk0 - Blog</title><h2>Blog</h2><ul style='line-height:1.2em;list-style:none;'>"
     posts.sort(reverse=True)
     for page in posts:
         ttl=page[1]
@@ -116,7 +116,7 @@ def buildPageIndex():
     global pages
     global posts
     tmp="/tmp/tmp.html"
-    paghtml="<h2>Index</h2><ul style='line-height:1.2em;list-style:none;'>"
+    paghtml="<title>nyk0 - Index</title><h2>Index</h2><ul style='line-height:1.2em;list-style:none;'>"
     pages.sort()
     for page in pages:
         paghtml+="<li><a href="+page[0]+">"+page[1]+"</a></li>"
@@ -174,7 +174,7 @@ def buildRecent():
     tmp="/tmp/tmp.html"
     maxpages=30
     thispage=0
-    recentList="<h2>Recent changes</h2><ul style='line-height:1.2em;list-style:none;'>"
+    recentList="<title>Recent changes</title><h2>Recent changes</h2><ul style='line-height:1.2em;list-style:none;'>"
     
     list_of_files = filter( os.path.isfile, glob.glob(srcFolder + '*') )    
     # Sort list of files based on last modification time in ascending order
