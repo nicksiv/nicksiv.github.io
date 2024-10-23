@@ -1,4 +1,4 @@
-0	dotfiles
+0	unfiled-notes
 0	linux
 0	blog
 0	artsy
@@ -11,7 +11,7 @@
 5	emacs
 8	classical-styles
 11	emacs-windows
-0	unfiled-notes
+1	dotfiles
 5	cwm
 5	wikis
 11	emacs-talks
