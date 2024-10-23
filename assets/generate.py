@@ -182,7 +182,7 @@ def buildRecent():
     for file_path in list_of_files:
         timestamp_str = time.strftime(  '%Y-%m-%d', time.localtime(os.path.getmtime(file_path)))
         fnn=os.path.basename(file_path)
-        recentList+="<li><span class='timestamp'>"+timestamp_str+"</span>&nbsp;<a href='"+fnn+"'>"+fnn.split(".")[0]+"</a>"
+        recentList+="<li>"+timestamp_str+"&nbsp;-&nbsp;<a href='"+fnn+"'>"+fnn.split(".")[0]+"</a>"
         thispage+=1
         if thispage>maxpages:
             break;
@@ -246,7 +246,7 @@ def publish():
 
     print("site updated!")
     if forceUpdate==True:
-        print("force update")
+        print("forced full update")
 
 if len(args)>1:
     if args[1]=="publish":
