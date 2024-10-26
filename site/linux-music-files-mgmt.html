@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    </head>
+    <body>
+      <header>
+	<a style="text-decoration:none;color:black;" href="index.html">
+	<img style="border-radius:80px;width:70px;padding-top:16px;" align="left" src="img/profile.jpg" />
+        <htitle style="font-family:courier;">nyk0</htitle>
+	</a>
+	<nav>
+	  <ul>
+	    <li><a href="index.html">home</a></li>
+	    <li><a href="about.html">about</a></li>
+	    <li><a href="links.html">links</a></li>
+	    <li><a href="pagelist.html">index</a></li>
+
+	  </ul>
+	</nav>
+        </header>
+
+      <main>
+    <title>nyk0-nomikon - Linux - music file management commands</title>
+
+  <body>
+    <h2>Linux - music file management commands</h2>
+      <h2 id="copy-m3u-playlist-files-in-a-folder">Copy m3u playlist
+      files in a folder</h2>
+      <p>Run this script where the m3u playlist is stored</p>
+      <div class="sourceCode" id="cb1"><pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="st">&quot;s/#.*//g&quot;</span> <span class="op">&lt;</span> starFM.m3u <span class="kw">|</span> <span class="fu">sed</span> <span class="st">&quot;/^$/d&quot;</span> <span class="kw">|</span> <span class="cf">while</span> <span class="bu">read</span> <span class="va">line</span><span class="kw">;</span> <span class="cf">do</span> <span class="kw">((</span> <span class="va">COUNTER</span><span class="op">++</span> <span class="kw">));</span> <span class="va">filename</span><span class="op">=</span><span class="st">&quot;</span><span class="va">${line</span><span class="op">##</span><span class="pp">*</span>/<span class="va">}</span><span class="st">&quot;</span><span class="kw">;</span> <span class="fu">cp</span> <span class="st">&quot;</span><span class="va">${line}</span><span class="st">&quot;</span> <span class="st">&quot;/home/nick/export/starFM/</span><span class="va">$COUNTER</span><span class="st"> - </span><span class="va">$filename</span><span class="st">&quot;</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
+      <h2 id="linux-split-flac-cue-files">Linux: Split flac, cue
+      files</h2>
+      <p>shnsplit is the program used to split tracks, while
+      cuebreakpoints it reads the break-points from file.cue and pipe
+      them to shnsplit.</p>
+      <h3 id="install-tools">Install tools</h3>
+      <pre><code>sudo apt-get install cuetools shntool flac</code></pre>
+      <h3 id="make-the-split">Make the split</h3>
+      <pre><code>cuebreakpoints file.cue | shnsplit -o flac file.flac</code></pre>
+      <h3 id="real-example">Real example</h3>
+      <pre><code># step 1
+cuebreakpoints Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.cue | shnsplit -o flac Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.flac  -f Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.cue -t &quot;%n. %t&quot; Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.flac &lt; Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.cue 
+
+# step 2
+# fill the tags (make sure the original flac is in another dir)
+
+cuetag Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.cue *.flac
+</code></pre>
+  </body>
+<ul></ul>
+</main>
+    </body>
+        <footer>
+         last update: 2024-10-26 09:53 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+        </footer>    
+
+</html>
+
