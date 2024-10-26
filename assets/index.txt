@@ -6,7 +6,7 @@
 0	organizing
 5	tiddlywiki
 0	music
-8	music-explore
+8	classical-music-exporation
 8	music-greek
 5	emacs
 8	classical-styles
@@ -30,3 +30,4 @@
 4	1001-films
 2	linux-notes
 2	linux-music-files-mgmt
+8	ambient-exploration-lps
