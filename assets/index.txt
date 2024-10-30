@@ -1,4 +1,4 @@
-0	unfiled-notes
+0	unfiled-notes	links and notes I need to process
 0	linux
 0	blog
 0	artsy
@@ -12,7 +12,7 @@
 8	classical-styles
 11	emacs-windows
 1	dotfiles
-2	cwm
+2	cwm	The great calm window manager
 5	wikis
 11	emacs-talks
 11	gnus
@@ -25,10 +25,10 @@
 8	80s-playlist
 8	albums
 8	all-music
-4	artgallery
-4	best-films
-4	1001-films
-2	linux-notes
-2	linux-music-files-mgmt
+4	artgallery	My drawings and photos
+4	best-films	My top 5 films from each year 
+4	1001-films	The 1,001+ Movies you must see before you die list
+2	linux-notes	General notes on Linux
+2	linux-music-files-mgmt	Notes on handling music files on Linux
 8	ambient-exploration-lps
 11	zetteldeft

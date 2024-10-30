@@ -34,8 +34,12 @@ def getChildren(thisPage):
                 if int(lineid)==id:
                     #print("FOUND "+str(id)+" in "+line)
                     line=line.replace("\n","")
-                    pg=line.split("\t")[1]
-                    childLinks+="<li><a href=" + pg + ".html>"+pg+"</a>"
+                    pg=line.split("\t")
+                    desc=getDescription(pg)
+                    childLinks+="<li><a href=" + pg[1] + ".html>"+pg[1]+"</a>"
+                    if pg[1]!="":
+                        childLinks+="<p class='comment'>"+desc
+                    
     childLinks+="</ul>"
     return childLinks
     
@@ -111,7 +115,18 @@ def buildPostIndex():
     os.system("echo '"+ setModiFooter(foot,d,datetime.datetime.now()) + "' >> " + d)
     pages.append(["blog.html","blog"])
 
-    
+def getDescription(tabs):
+    if len(tabs)>2:
+        desc=tabs[2]
+    else:
+        desc=""
+    if tabs[1]=="recent":
+        desc="Recently modified pages"
+    if tabs[1]=="blog":
+        desc="All blog entries"
+
+    return desc
+
 def buildPageIndex():
     global pages
     global posts
@@ -141,11 +156,15 @@ def buildPageIndex():
             tabs=line.split("\t")
             if tabs[0]=="0":
                 fn=tabs[1]
-                #zeroindex+="<li><a href="+fn+".html>"+fn+"</a></li> "
-                zlist.append(fn)
+                desc=getDescription(tabs)
+
+                        #zeroindex+="<li><a href="+fn+".html>"+fn+"</a></li> "
+                zlist.append([fn, desc])
     zlist.sort()
     for item in zlist:
-        zeroindex+="<li><a href="+item+".html>"+item+"</a></li>"
+        zeroindex+="<li><a href="+item[0]+".html>"+item[0]+"</a>"
+        if item[1]!="":
+            zeroindex+="<p class='comment'>"+item[1]
     zeroindex+="</ul></idx>"
     # latest posts
     maxposts=3

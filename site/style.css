@@ -104,8 +104,9 @@ idx ul li:hover{
     /* background:var(--emphasis); */
 }
 
-.timestamp{
-    font-family:courier;
+.comment{
+    font-size:80%;
+    color:gray;
 
 }
 img {
