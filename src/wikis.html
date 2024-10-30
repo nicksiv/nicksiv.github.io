@@ -1,72 +1,62 @@
-<title>Wikis</title>
+    <title>nyk0-nomikon - Wikis</title>
 
-<h2>Wikis</h2>
-
-<p>Information on different wiki systems installation
-
-<h3>1. DocuWiki</h3>
-<p><a href="https://www.dokuwiki.org/dokuwiki">https://www.dokuwiki.org/dokuwiki</a>
-<p>In linux, download dokuwiki and extract into a folder (eg: Documents)
-<p>except php which is by default installed in linux, you need to install this:
-<p><code>sudo apt install xml-php</code>
-<p>To run with the simple php server:
-<pre>
-php -S 127.0.0.1:8080 -t ~/Documents/dokuwiki/
-</pre>
-
-<h3>2. The federated wiki</h3>
-<p><a href="https://fed.wiki.org">https://fed.wiki.org</a>
-<p>Really interesting simple engine. If setup on-line it can be networked with others.
-
-<pre>
-   - npm install -g wiki
+  <body>
+    <h2>Wikis</h2>
+      <p>Information on different wiki systems installation</p>
+      <h3 id="docuwiki">1. DocuWiki</h3>
+      <p><a href="https://www.dokuwiki.org/dokuwiki"
+      class="uri">https://www.dokuwiki.org/dokuwiki</a></p>
+      <p>In linux, download dokuwiki and extract into a folder (eg:
+      Documents)</p>
+      <p>except php which is by default installed in linux, you need to
+      install this:</p>
+      <p><code>sudo apt install xml-php</code></p>
+      <p>To run with the simple php server:</p>
+      <pre><code>php -S 127.0.0.1:8080 -t ~/Documents/dokuwiki/</code></pre>
+      <h3 id="the-federated-wiki">2. The federated wiki</h3>
+      <p><a href="https://fed.wiki.org"
+      class="uri">https://fed.wiki.org</a></p>
+      <p>Really interesting simple engine. If setup on-line it can be
+      networked with others.</p>
+      <pre><code>   - npm install -g wiki
    - launch with wiki command, files location ~/.wiki
-   - site on: localhost:3000
-</pre>
-
-<h3>3. MediaWiki</h3>
-<p>Installation guides
-  <ul>
-<li><a href="https://www.mediawiki.org/wiki/Manual:Installation_requirements">Requirements</a>
-<li><a href="https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki_on_XAMPP">Installing on XAMPP</a>
-  </ul>
-  
-<p><strong>Using XAMPP</strong>
-  <ul>
-    <li><a href="https://www.mediawiki.org/wiki/Download">Get mediaWiki</a>
-      <li><a href="https://www.apachefriends.org/download.html">Get XAMPP for Windows/Linux</a>
-
-<li>Unzip into <code>/opt/lampp/htdocs</code>
-<li>Change folder access to group:RW others:R
-  </ul>
-  
-<pre>
-sudo /opt/lampp/lampp start
-sudo /opt/lampp/lampp stop
-</pre>
-  
-<p><b>Ownership of mediawiki folder</b>
-<p>The owner might be root or user but the group should be daemon so that apache can have write access
-
-<pre>
-sudo chown -R nick:daemon /opt/lampp/htdocs/mediawiki
-</pre>
-
-<p><b>Export data into xml file</b>
-<p>For this to work you need packages `php-mysql php-mbstring php-intl`
-
-<pre>
-cd /opt/lampp/htdocs/wiki/maintenance
-php dumpBackup.php --full --quiet > ~/Documents/wm-dump.xml
-</pre>
-
-<p><b>Import data</b>
-
-<pre>
-cd /opt/lampp/htdocs/wiki/maintenance
-php importDump.php < ~/Documents/wm-dump.xml
-</pre>
-
-<p>Resources
-<p><a href="https://river.me/">River Writes - A MediaWiki Blog</a>
-
+   - site on: localhost:3000</code></pre>
+      <h3 id="mediawiki">3. MediaWiki</h3>
+      <p>Installation guides</p>
+      <ul>
+      <li><a
+      href="https://www.mediawiki.org/wiki/Manual:Installation_requirements">Requirements</a></li>
+      <li><a
+      href="https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki_on_XAMPP">Installing
+      on<br />
+      XAMPP</a></li>
+      </ul>
+      <p><strong>Using XAMPP</strong></p>
+      <ul>
+      <li><p><a href="https://www.mediawiki.org/wiki/Download">Get
+      mediaWiki</a></p></li>
+      <li><p><a href="https://www.apachefriends.org/download.html">Get
+      XAMPP for<br />
+      Windows/Linux</a></p></li>
+      <li><p>Unzip into <code>/opt/lampp/htdocs</code></p></li>
+      <li><p>Change folder access to group:RW others:R</p>
+      <pre><code>sudo /opt/lampp/lampp start
+sudo /opt/lampp/lampp stop</code></pre></li>
+      </ul>
+      <p><strong>Ownership of mediawiki folder</strong></p>
+      <p>The owner might be root or user but the group should be daemon
+      so that<br />
+      apache can have write access</p>
+      <pre><code>sudo chown -R nick:daemon /opt/lampp/htdocs/mediawiki</code></pre>
+      <p><strong>Export data into xml file</strong></p>
+      <p>For this to work you need packages `php-mysql php-mbstring
+      php-intl`</p>
+      <pre><code>cd /opt/lampp/htdocs/wiki/maintenance
+php dumpBackup.php --full --quiet &gt; ~/Documents/wm-dump.xml</code></pre>
+      <p><strong>Import data</strong></p>
+      <pre><code>cd /opt/lampp/htdocs/wiki/maintenance
+php importDump.php &lt; ~/Documents/wm-dump.xml</code></pre>
+      <p>Resources</p>
+      <p><a href="https://river.me/">River Writes - A MediaWiki
+      Blog</a></p>
+  </body>

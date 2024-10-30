@@ -7,7 +7,7 @@
 5	tiddlywiki
 0	music
 8	classical-music-exporation
-8	music-greek
+8	top100-greek-albums
 5	emacs
 8	classical-styles
 11	emacs-windows

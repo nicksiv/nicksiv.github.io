@@ -1,37 +1,48 @@
-<title>Emacs Windows installation</title>
+    <title>nyk0-nomikon - Emacs Windows installation</title>
 
-<h2>Emacs Windows installation</h2>
-<p>Notes for required actions after installation of emacs on windows.
-<p><b>Warning:</b> Emacs under Windows is soo slow...
-
-
-
-<h3>Set home folder on Windows
-<p>Open Powershell in administrator mode and enter this line:
-<code>setx HOME %USERPROFILE%</code>
-
-<h3>Add to .emacs configuration file</h3>
-  <pre>
-;; Windows OS
+  <body>
+    <h2>Emacs Windows installation</h2>
+      <p>Notes for required actions after installation of emacs on
+      windows.</p>
+      <p><strong>Warning:</strong> Emacs under Windows is soo
+      slow...</p>
+      <h3 id="set-home-folder-on-windows">Set home folder on
+      Windows</h3>
+      <p>Open Powershell in administrator mode and enter this
+      line:<br />
+      <code>setx HOME %USERPROFILE%</code></p>
+      <h3 id="add-to-.emacs-configuration-file">Add to .emacs
+      configuration file</h3>
+      <pre><code>;; Windows OS
 ;; Settings specific for Windows locale saving style
 
-  (setq-default buffer-file-coding-system 'utf-8-unix)
-  (setq buffer-file-coding-system 'utf-8-unix)
+  (setq-default buffer-file-coding-system &#39;utf-8-unix)
+  (setq buffer-file-coding-system &#39;utf-8-unix)
 
-  (set-terminal-coding-system 'utf-8)
-  ;(set-language-environment 'utf-8)
-  (set-keyboard-coding-system 'utf-8)
-  (prefer-coding-system 'utf-8)
-  (setq locale-coding-system 'utf-8)
-  (set-default-coding-systems 'utf-8)
-  (set-terminal-coding-system 'utf-8)
-  (setenv "LC_ALL" "C")
-  </pre>
-  
-<h3>Using Doc-View for windows (pdf display)</h3>
-<p>install <a href="https://chocolatey.org/install">chocolatey</a> 
-<p><code>choco install xpdf-utils ghostscript</code>
-
-<h3>Gnus use of PGP for Windows</h3>
-<p><code>choco install gnupg</code>
-
+  (set-terminal-coding-system &#39;utf-8)
+  ;(set-language-environment &#39;utf-8)
+  (set-keyboard-coding-system &#39;utf-8)
+  (prefer-coding-system &#39;utf-8)
+  (setq locale-coding-system &#39;utf-8)
+  (set-default-coding-systems &#39;utf-8)
+  (set-terminal-coding-system &#39;utf-8)
+  (setenv &quot;LC_ALL&quot; &quot;C&quot;)
+  </code></pre>
+      <h3 id="using-doc-view-for-windows-pdf-display">Using Doc-View for
+      windows (pdf display)</h3>
+      <p>install <a
+      href="https://chocolatey.org/install">chocolatey</a></p>
+      <p><code>choco install xpdf-utils ghostscript</code></p>
+      <h3 id="gnus-use-of-pgp-for-windows">Gnus use of PGP for
+      Windows</h3>
+      <p><code>choco install gnupg</code></p>
+      <h3 id="links">Links</h3>
+      <ul>
+      <li><a
+      href="https://earvingad.github.io/posts/doom_emacs_windows/">Install
+      doom-emacs on Windows</a></li>
+      <li><a
+      href="https://caiorss.github.io/Emacs-Elisp-Programming/Emacs_On_Windows.html">Emacs
+      on Windows</a></li>
+      </ul>
+  </body>

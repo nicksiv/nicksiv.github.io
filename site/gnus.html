@@ -24,59 +24,73 @@
         </header>
 
       <main>
-<title>Emacs Gnus</title>
+    <title>nyk0-nomikon - Emacs Gnus</title>
 
-<h2>Emacs Gnus</h2>
-<p>If you live inside emacs, having a simple way to check your email can be a life savior. Sometimes when I don't have my browser open and working inside a buffer, it is so simple to fire up gnus, which I have bound to a shortcut for quick access.
-<p>Making gnus to work under Gmail is pretty simple. I followed a tutorial from <a href="https://www.emacswiki.org/emacs/GnusTutorial">emacswiki</a>
-  and worked like a charm. 
-
-<p>The configuration is split in two parts. The first part goes into the emacs config (~/.emacs or init.el).
-
-<pre>
-(setq gnus-select-method '(nnimap "gmail"
-(nnimap-address "imap.gmail.com"); it could also be imap.googlemail.com if that's your server.
+  <body>
+    <h2>Emacs Gnus</h2>
+      <p>If you live inside emacs, having a simple way to check your
+      email can be<br />
+      a life savior. Sometimes when I don't have my browser open and
+      working<br />
+      inside a buffer, it is so simple to fire up gnus, which I have
+      bound to<br />
+      a shortcut for quick access.</p>
+      <p>Making gnus to work under Gmail is pretty simple. I followed a
+      tutorial<br />
+      from <a
+      href="https://www.emacswiki.org/emacs/GnusTutorial">emacswiki</a>
+      and worked like a charm.</p>
+      <p>The configuration is split in two parts. The first part goes
+      into the emacs config (~/.emacs or init.el).</p>
+      <pre><code>(setq gnus-select-method &#39;(nnimap &quot;gmail&quot;
+(nnimap-address &quot;imap.gmail.com&quot;); it could also be imap.googlemail.com if that&#39;s your server.
 (nnimap-server-port 993)
 (nnimap-stream ssl)))
-(setq message-send-mail-function 'smtpmail-send-it
-smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-smtpmail-auth-credentials '(("smtp.gmail.com" 587 "your_email@gmail.com" nil))
-smtpmail-default-smtp-server "smtp.gmail.com"
-smtpmail-smtp-server "smtp.gmail.com"
+(setq message-send-mail-function &#39;smtpmail-send-it
+smtpmail-starttls-credentials &#39;((&quot;smtp.gmail.com&quot; 587 nil nil))
+smtpmail-auth-credentials &#39;((&quot;smtp.gmail.com&quot; 587 &quot;your_email@gmail.com&quot; nil))
+smtpmail-default-smtp-server &quot;smtp.gmail.com&quot;
+smtpmail-smtp-server &quot;smtp.gmail.com&quot;
 smtpmail-smtp-service 587
-smtpmail-local-domain "yourdomain")
-(global-set-key [f8] 'gnus)
-
-</pre>
-
-<p>The last command is my personal keybinding for running gnus.
-
-<p>Secondly, a new file should be created, the <code>~/.authinfo</code>, which will contain sensitive login info. That's why I thought it is better to have this encrypted, so I saved it as <code>~/.authinfo.gpg</code>. Below is the file's contents:
-
-<code>machine imap.gmail.com login youremail password secret port 993</code>
-
-<p>Just edit the youremail and secret with your email and password. Now everytime you get to open gnus you will be prompted for the encryption key which you can save into your keyring.
-
-<h3>Some basic gnus keybindings</h3>
-<ul>
-<li> B-DEL : delete message
-<li> B-m : Move message to another group
-<li> GG : Find message on selected group
-<li> /o : Show all mails in message view
-<li> Cc Cs RET Cd : Sort newest to olders in message view
-<li> Cc Cs Ca : Sort by author
-<li> Cc Cs Cs : Sort by subject
-<li> g : Refresh (receive new mail)
-<li> c : catch up with folder (mark all as read)
-<li> L/l : Show all groups/unread groups
-<li> Gc : Customize group
-<li> ! or u : mark msg as important (always show)
-</ul>
+smtpmail-local-domain &quot;yourdomain&quot;)
+(global-set-key [f8] &#39;gnus)</code></pre>
+      <p>The last command is my personal keybinding for running
+      gnus.</p>
+      <p>Secondly, a new file should be created, the
+      <code>~/.authinfo</code>, which will<br />
+      contain sensitive login info. That's why I thought it is better to
+      have<br />
+      this encrypted, so I saved it as <code>~/.authinfo.gpg</code>.
+      Below is the file's<br />
+      contents:<br />
+      <code>machine imap.gmail.com login youremail password secret port 993</code></p>
+      <p>Just edit the youremail and secret with your email and
+      password. Now<br />
+      everytime you get to open gnus you will be prompted for the
+      encryption<br />
+      key which you can save into your keyring.</p>
+      <h3 id="some-basic-gnus-keybindings">Some basic gnus
+      keybindings</h3>
+      <ul>
+      <li>B-DEL : delete message</li>
+      <li>B-m : Move message to another group</li>
+      <li>GG : Find message on selected group</li>
+      <li>/o : Show all mails in message view</li>
+      <li>Cc Cs RET Cd : Sort newest to olders in message view</li>
+      <li>Cc Cs Ca : Sort by author</li>
+      <li>Cc Cs Cs : Sort by subject</li>
+      <li>g : Refresh (receive new mail)</li>
+      <li>c : catch up with folder (mark all as read)</li>
+      <li>L/l : Show all groups/unread groups</li>
+      <li>Gc : Customize group</li>
+      <li>! or u : mark msg as important (always show)</li>
+      </ul>
+  </body>
 <ul></ul>
 </main>
     </body>
         <footer>
-         last update: 2024-10-22 19:00 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+         last update: 2024-10-30 07:43 -- nyk0 © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
         </footer>    
 
 </html>
