@@ -18,7 +18,7 @@ pages=[]
 posts=[]
 head=os.path.join(assetFolder,"header.html")
 foot=os.path.join(assetFolder,"footer.html")
-
+sitetitle="nyk0-nomikon"
 forceUpdate=False
 
 
@@ -77,7 +77,7 @@ def buildGallery():
     aFolder=destFolder+"img/art/"
     d=os.path.join(destFolder,"artgallery.html")
     list_of_files = sorted( filter( lambda x: os.path.isfile(os.path.join(aFolder, x)), os.listdir(aFolder) ),reverse=False )
-    gahtml="<style>body{max-width:98%;}</style><h1>Art gallery</h1><p>A selection of photos and drawings made over the years</p><div>"
+    gahtml="<style>body{max-width:98%;}</style><title>"+sitetitle+" - Artworks gallery</title><h1>Art gallery</h1><p>A selection of photos and drawings made over the years</p><div>"
     for filename in list_of_files:
         if filename[:5]=="thumb":
             fn=filename.split("-")
@@ -98,7 +98,7 @@ def buildGallery():
 def buildPostIndex():
     global posts
     tmp="/tmp/tmp.html"
-    paghtml="<title>nyk0 - Blog</title><h2>Blog</h2><ul style='line-height:1.2em;list-style:none;'>"
+    paghtml="<title>"+sitetitle+" - Blog</title><h2>Blog</h2><ul style='line-height:1.2em;list-style:none;'>"
     posts.sort(reverse=True)
     for page in posts:
         ttl=page[1]
@@ -193,7 +193,7 @@ def buildRecent():
     tmp="/tmp/tmp.html"
     maxpages=30
     thispage=0
-    recentList="<title>Recent changes</title><h2>Recent changes</h2><ul style='line-height:1.2em;list-style:none;'>"
+    recentList="<title>"+sitetitle+" - Recent changes</title><h2>Recent changes</h2><ul style='line-height:1.2em;list-style:none;'>"
     
     list_of_files = filter( os.path.isfile, glob.glob(srcFolder + '*') )    
     # Sort list of files based on last modification time in ascending order
