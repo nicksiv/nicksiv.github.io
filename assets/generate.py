@@ -217,8 +217,27 @@ def buildRecent():
     os.system("echo '"+ setModiFooter(foot,d,datetime.datetime.now()) + "' >> " + d)
     pages.append(["recent.html","recent"])
 
+def buildRSS():
+    # build rss feed
+    rss='<?xml version="1.0" encoding="UTF-8" ?>\
+    <rss version="2.0">\
+    <channel>\
+    <title>'+sitetitle+' feed</title>\
+    <description>nyk0 RSS feed</description>\
+    <link>https://nicksiv.github.io/site/index.html</link>\
+    <lastBuildDate>Mon, 06 Sep 2010 00:01:00 +0000 </lastBuildDate>\
+    <pubDate>Mon, 06 Sep 2009 16:45:00 +0000 </pubDate>'
 
-    
+    rss+='  <item>\
+    <title>Example entry</title>\
+    <description>Here is some text containing an interesting description.</description>\
+    <link>http://www.wikipedia.org/</link>\
+    <guid>unique string per item</guid>\
+    <pubDate>Mon, 06 Sep 2009 16:45:00 +0000 </pubDate>\
+    </item>'
+
+    rss+="</channel></rss>"
+   
 def publish():
     # ============== Main routine start ==================================
     list_of_files = sorted( filter( lambda x: os.path.isfile(os.path.join(srcFolder, x)), os.listdir(srcFolder) ),reverse=False )
@@ -262,7 +281,8 @@ def publish():
     buildPostIndex()
     buildRecent()
     buildPageIndex()
-
+    buildRSS()
+    
     print("site updated!")
     if forceUpdate==True:
         print("forced full update")
