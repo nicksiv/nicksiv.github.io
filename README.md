@@ -2,7 +2,7 @@
 *retired cybernaut and experimenting technomage*
 welcome to my personal web-space!
 
-<img style="border-radius:80px;" src="profile.jpg" />
+<img style="border-radius:80px;" src="site/img/profile.jpg" />
 
 ### Links
 * [Fediverse](https://octodon.social/@nicksiv)
