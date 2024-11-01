@@ -219,24 +219,45 @@ def buildRecent():
 
 def buildRSS():
     # build rss feed
+    thispage=0
+    thisdate=datetime.datetime.now()
+    today=thisdate.strftime(  '%a, %d %b %Y %H:%M:%S')
     rss='<?xml version="1.0" encoding="UTF-8" ?>\
     <rss version="2.0">\
     <channel>\
     <title>'+sitetitle+' feed</title>\
     <description>nyk0 RSS feed</description>\
     <link>https://nicksiv.github.io/site/index.html</link>\
-    <lastBuildDate>Mon, 06 Sep 2010 00:01:00 +0000 </lastBuildDate>\
-    <pubDate>Mon, 06 Sep 2009 16:45:00 +0000 </pubDate>'
+    <lastBuildDate>'+ today +'</lastBuildDate>\
+    <pubDate>'+ today +'</pubDate>'
+    maxpages=20
+    list_of_files = filter( os.path.isfile, glob.glob(srcFolder + '*') )    
+    # Sort list of files based on last modification time in ascending order
+    list_of_files = sorted( list_of_files, key = os.path.getmtime, reverse=True)
+    for file_path in list_of_files:
+        timestamp_str = time.strftime(  '%Y-%m-%d', time.localtime(os.path.getmtime(file_path)))
+        fnn=os.path.basename(file_path)
+        #rss+="<li>"+timestamp_str+"&nbsp;-&nbsp;<a href='"+fnn+"'>"+fnn.split(".")[0]+"</a>"
+        rss+='  <item>\
+        <title>'+fnn.split(".")[0]+'</title>\
+        <description>Here is some text containing an interesting description.</description>\
+        <link>https://nicksiv.github.io/site/'+fnn+'</link>\
+        <guid>Item:'+str(thispage)+'</guid>\
+        <pubDate>'+time.strftime(  '%a, %d %b %Y %H:%M:%S', time.localtime(os.path.getmtime(file_path)))+'</pubDate>\
+        </item>'
 
-    rss+='  <item>\
-    <title>Example entry</title>\
-    <description>Here is some text containing an interesting description.</description>\
-    <link>http://www.wikipedia.org/</link>\
-    <guid>unique string per item</guid>\
-    <pubDate>Mon, 06 Sep 2009 16:45:00 +0000 </pubDate>\
-    </item>'
-
+        thispage+=1
+        if thispage>maxpages:
+            break;
+        
     rss+="</channel></rss>"
+    tmp=os.path.join(destFolder,"rss.xml")
+    with open(tmp, "w") as myfile:
+        myfile.write(rss)
+        myfile.close()
+
+
+
    
 def publish():
     # ============== Main routine start ==================================
