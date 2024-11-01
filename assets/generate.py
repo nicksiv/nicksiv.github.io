@@ -217,6 +217,18 @@ def buildRecent():
     os.system("echo '"+ setModiFooter(foot,d,datetime.datetime.now()) + "' >> " + d)
     pages.append(["recent.html","recent"])
 
+def getContentForRSS(fname):
+    #get content of page
+    d=destFolder+fname
+    with open(d, "r") as myfile:
+        ind=myfile.read().upper()
+        myfile.close()
+    body=""
+    x=ind.find("<H2>")
+    if x>-1:
+        body=ind[x+4:].split("</H2>")[0]
+    return body
+    
 def buildRSS():
     # build rss feed
     thispage=0
@@ -240,7 +252,7 @@ def buildRSS():
         #rss+="<li>"+timestamp_str+"&nbsp;-&nbsp;<a href='"+fnn+"'>"+fnn.split(".")[0]+"</a>"
         rss+='  <item>\
         <title>'+fnn.split(".")[0]+'</title>\
-        <description>Here is some text containing an interesting description.</description>\
+        <description>'+ getContentForRSS(fnn)+'</description>\
         <link>https://nicksiv.github.io/site/'+fnn+'</link>\
         <guid>Item:'+str(thispage)+'</guid>\
         <pubDate>'+time.strftime(  '%a, %d %b %Y %H:%M:%S', time.localtime(os.path.getmtime(file_path)))+'</pubDate>\
