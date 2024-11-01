@@ -226,7 +226,7 @@ def getContentForRSS(fname):
     body=""
     x=ind.find("<H2>")
     if x>-1:
-        body=ind[x+4:].split("</H2>")[0]
+        body=ind[x+4:].split("</H2>")[0].capitalize()
     return body
     
 def buildRSS():
@@ -238,7 +238,7 @@ def buildRSS():
     <rss version="2.0">\
     <channel>\
     <title>'+sitetitle+' feed</title>\
-    <description>nyk0 RSS feed</description>\
+    <description>nyk0 RSS latest changes</description>\
     <link>https://nicksiv.github.io/site/index.html</link>\
     <lastBuildDate>'+ today +'</lastBuildDate>\
     <pubDate>'+ today +'</pubDate>'
