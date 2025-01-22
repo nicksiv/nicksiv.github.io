@@ -4,7 +4,7 @@
 ** Todo items in pages <todo> tag
    Add specific styling to those
 ** Recent changes page
-** RSS feed
+** DONE RSS feed
 ** It would be good to have my feeds list published
 ** Set <title> on each page according to its <h2>
 ** Site Log?
