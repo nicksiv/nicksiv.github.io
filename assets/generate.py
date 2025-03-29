@@ -19,7 +19,7 @@ posts=[]
 head=os.path.join(assetFolder,"header.html")
 foot=os.path.join(assetFolder,"footer.html")
 sitetitle="nyk0-nomikon"
-forceUpdate=False
+forceUpdate=True
 
 
 def getChildren(thisPage):
@@ -68,6 +68,7 @@ def setModiFooter(footer,dfile,dfiletime):
 
 def copySiteFiles():
     # Copy files for public
+    print("css")
     shutil.copy(assetFolder+"style.css",destFolder)
 
 def buildGallery():
