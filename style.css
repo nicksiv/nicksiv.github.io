@@ -1,1 +1,163 @@
-.prive{visibility:none;
+/* generic minimal CSS reset
+   inspiration: https://www.digitalocean.com/community/tutorials/css-minimal-css-reset */
+
+:root {
+    box-sizing: border-box;
+    line-height: 1.4;
+    /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    --emphasis: #ffe68d;
+    --indexback: lavender;
+    --back-base00: #839496;
+    --back-base01: #586e75;
+    --back-base02: #073642;
+    --back-base03: #002b36;
+    --back-base04: #93a1a1;
+    --back-base2: #eee8d5;
+    --back-base3: #fdf6e3;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    clear:both;
+        background:var(--back-base2);
+}
+
+body {
+    margin-left:20px;
+    max-width:600px;
+}
+
+p {
+    line-height: 1.5em;
+    
+}
+
+pre {
+    border:1px solid black;
+    padding:10px;
+    overflow-x: auto;
+    background:var(--indexback);
+}
+
+.preledger{
+    width:fit-content;
+}
+
+code{
+    font-size:14px;
+    padding-left:6px;
+    padding-right:6px;
+    background:var(--indexback);
+
+}
+htitle{
+    font-size:4em;
+    font-weight:bold;
+}
+
+
+h1,h2,h3{
+    font-weight:bold;
+    max-width:750px;
+    margin-top:20px;
+}
+
+nav ul, idx ul, idx2 ul{
+    padding:inherit;
+}
+nav ul li{
+    display: inline;
+    padding:6px;
+    list-type:none;
+    white-space:pre;
+}
+
+nav ul li a{
+    text-decoration:underline;
+
+}
+
+idx, idx2 {
+    line-height:110%;
+}
+idx ul li{
+    padding:4px;
+    list-style:none;
+    margin-left: 25px;
+    border-left:12px solid var(--indexback);
+}
+
+idx2 ul li{
+    padding:4px;
+    list-style:none;
+    margin-left: 25px;
+    border-left:12px solid var(--emphasis);
+}
+
+idx ul li a{
+    /* text-decoration:none; */
+}
+
+
+idx ul li:hover{
+    /* background:var(--emphasis); */
+}
+
+.comment{
+    font-size:80%;
+    color:gray;
+
+}
+img {
+    max-width:100%;
+    height:auto;
+}
+
+a {
+    color:black;
+}
+
+a:hover {
+    background:var(--emphasis);
+}
+
+table {
+    border: 1px solid gray;
+    font-size: 10px;
+}
+
+.even, th {
+    background:var(--indexback);
+}
+
+footer {
+    height:70px;
+      display: flex;
+      align-items: center;
+      border-top:1px dotted black;
+      font-size:80%;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+body {
+    margin-left:6px;
+    max-width:99%;
+    font-size:80%;
+}
+
+idx ul li{
+    padding:1px;
+    border-radius:6px;
+
+}
+
+}
