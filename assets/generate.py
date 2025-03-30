@@ -19,7 +19,7 @@ posts=[]
 head=os.path.join(assetFolder,"header.html")
 foot=os.path.join(assetFolder,"footer.html")
 sitetitle="nyk0-nomikon"
-forceUpdate=True
+forceUpdate=False
 
 
 def getChildren(thisPage):
@@ -151,16 +151,16 @@ def buildPageIndex():
         # latest posts
     maxposts=5
     postno=0
-    latestindex="<h3>latest thoughts</h3><idx2><ul>"
+    latestindex="<p>&nbsp;</p><div class=idx><h3>latest thoughts</h3><ul>"
     for item in posts:
         if postno<maxposts:
             ttl=item[1]
             ttl=ttl[:10]+": "+ttl[11:].replace("-"," ").capitalize()
             latestindex+="<li><a href="+item[0]+">"+ttl+"</a></li>"
             postno+=1
-    latestindex+="<li><a href=blog.html>more...</a></ul></idx2>"
+    latestindex+="<li><a href=blog.html>more...</a></ul></div>"
 
-    zeroindex="<h3>notes & pages</h3><idx><ul>"
+    zeroindex="<p>&nbsp;</p><div class=idx><h3>notes & pages</h3><ul>"
     zlist=[]
     with open(i, "r") as myfile:
         lines = list(line for line in (l for l in myfile) if line)
@@ -178,7 +178,7 @@ def buildPageIndex():
         zeroindex+="<li><a href="+item[0]+".html>"+item[0]+"</a>"
         if item[1]!="":
             zeroindex+="<p class='comment'>"+item[1]
-    zeroindex+="</ul></idx>"
+    zeroindex+="</ul></div>"
 
     # write index to the homepage
     with open(d, "r") as myfile:
