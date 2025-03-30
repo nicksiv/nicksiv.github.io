@@ -148,6 +148,18 @@ def buildPageIndex():
 
     # ===== Index on index.html ==========
     d=os.path.join(destFolder,"index.html")
+        # latest posts
+    maxposts=5
+    postno=0
+    latestindex="<h3>latest thoughts</h3><idx2><ul>"
+    for item in posts:
+        if postno<maxposts:
+            ttl=item[1]
+            ttl=ttl[:10]+": "+ttl[11:].replace("-"," ").capitalize()
+            latestindex+="<li><a href="+item[0]+">"+ttl+"</a></li>"
+            postno+=1
+    latestindex+="<li><a href=blog.html>more...</a></ul></idx2>"
+
     zeroindex="<h3>notes & pages</h3><idx><ul>"
     zlist=[]
     with open(i, "r") as myfile:
@@ -167,22 +179,11 @@ def buildPageIndex():
         if item[1]!="":
             zeroindex+="<p class='comment'>"+item[1]
     zeroindex+="</ul></idx>"
-    # latest posts
-    maxposts=3
-    postno=0
-    latestindex="<h3>latest thoughts</h3><idx2><ul>"
-    for item in posts:
-        if postno<maxposts:
-            ttl=item[1]
-            ttl=ttl[:10]+": "+ttl[11:].replace("-"," ").capitalize()
-            latestindex+="<li><a href="+item[0]+">"+ttl+"</a></li>"
-            postno+=1
-    latestindex+="<li><a href=blog.html>more...</a></ul></idx2>"
 
     # write index to the homepage
     with open(d, "r") as myfile:
         ind=myfile.read()
-        ind=ind.replace("<nyk0index>",zeroindex+latestindex)
+        ind=ind.replace("<nyk0index>",latestindex+zeroindex)
         myfile.close()
     with open(d, "w") as myfile:
         myfile.write(ind)

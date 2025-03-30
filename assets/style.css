@@ -67,7 +67,7 @@ code{
 
 }
 htitle{
-    font-size:4em;
+    font-size:2em;
     font-weight:normal;
     color:var(--back-base04);
 }
@@ -102,14 +102,14 @@ idx ul li{
     padding:4px;
     list-style:none;
     margin-left: 25px;
-    border-left:12px solid var(--indexback);
+    border-left:3px dotted var(--indexback);
 }
 
 idx2 ul li{
     padding:4px;
     list-style:none;
     margin-left: 25px;
-    border-left:12px solid var(--emphasis);
+    border-left:3px dotted var(--emphasis);
 }
 
 idx ul li a{
