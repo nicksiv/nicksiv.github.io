@@ -12,20 +12,24 @@
 
 
 
-    --fore-dark0: #eee8d5;    
-    --fore-dark2: #586e75;
-    --back-dark2: #073642;
-
-    --back-base3: #fdf6e3;
 
     /* Theme solarized */
-    --fore-color: #839496;
-    --back-color: #002b36;
-    --emphasis-color: #cb4b16;
-    --secondary-color: #93a1a1;
-    --bold-color: #b58900;
-    --links-dark:#268bd2;
-    --linksh-dark:#073642;
+    /* --fore-color: #839496; */
+    /* --back-color: #002b36; */
+    /* --emphasis-color: #cb4b16; */
+    /* --secondary-color: #93a1a1; */
+    /* --bold-color: #b58900; */
+    /* --links-dark:#268bd2; */
+    /* --linksh-dark:#073642; */
+
+    /* Theme dracula */
+    --fore-color: #f8f8f2;
+    --back-color: #282a36;
+    --emphasis-color: #6272a4;
+    --secondary-color: #44475a;
+    --bold-color: #f1fa8c;
+    --links-dark:#bd93f9;
+    --linksh-dark:#44475a;
 
 }
 
@@ -77,6 +81,10 @@ htitle{
     color:var(--secondary-color);
 }
 
+htitle:hover {
+    background:var(--link-dark);
+    color:var(--bold-color);
+}
 
 h1,h2,h3{
     font-weight:bold;

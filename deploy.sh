@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/nicksiv.github.io
+cd /home/nyk0/nicksiv.github.io
 
 # If a command fails then the deploy stops
 set -e
