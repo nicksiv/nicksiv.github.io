@@ -1,11 +1,11 @@
 0	unfiled-notes	links and notes I need to process
-0	linux
+0	linux	useful notes about my favorite OS
 0	blog
-0	artsy
-0	software
-0	organizing
+0	artsy	art related stuff & media
+0	software	notes on software I use and love
+0	organizing	a love-to-hate category
 5	tiddlywiki
-0	music
+0	music	music related notes. It is art too!
 8	classical-music-exporation
 8	top100-greek-albums
 5	emacs
