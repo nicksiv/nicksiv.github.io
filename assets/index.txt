@@ -1,11 +1,11 @@
 0	unfiled-notes	links and notes I need to process
 0	linux	useful notes about my favorite OS
 0	blog
-0	artsy	art related stuff & media
+0	artistic	art related stuff & media
 0	software	notes on software I use and love
 0	organizing	a love-to-hate category
 5	tiddlywiki
-0	music	music related notes. It is art too!
+4	music	music related notes
 8	classical-music-exporation
 8	top100-greek-albums
 5	emacs
@@ -20,7 +20,6 @@
 99	about
 11	emacs-links
 5	openbsd
-0	recent
 8	80s-playlist
 8	albums
 8	all-music
