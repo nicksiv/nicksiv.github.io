@@ -1,5 +1,6 @@
   #!/bin/bash 
   # Installation script
+
   # Applications
   cd #
   sudo apt install firefox-esr git vim emacs tmux keepassxc curl recutils mpv cmus unzip newsboat nextcloud-desktop tlp tlp-rdw imagemagick

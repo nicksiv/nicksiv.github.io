@@ -128,39 +128,22 @@ def getDescription(tabs):
 
     return desc
 
-def buildPageIndex():
-    global pages
-    global posts
-    tmp="/tmp/tmp.html"
-    paghtml="<title>nyk0 - Index</title><h2>Index</h2><ul style='line-height:1.2em;list-style:none;'>"
-    pages.sort()
-    for page in pages:
-        paghtml+="<li><a href="+page[0]+">"+page[1]+"</a></li>"
-    paghtml+="</ul>"
-    with open(tmp, "w") as myfile:
-        myfile.write("<p>There are "+str(len(pages))+" indexed pages<p>&nbsp;<p>"+paghtml)
-        myfile.close()
+def buildVault():
+        # ===== Index on index.html ==========
+    d=os.path.join(destFolder,"vault.html")
+    #     # latest posts
+    # maxposts=5
+    # postno=0
+    # latestindex="<p>&nbsp;</p><div class=idx><h3>latest thoughts</h3><ul>"
+    # for item in posts:
+    #     if postno<maxposts:
+    #         ttl=item[1]
+    #         ttl=ttl[:10]+": "+ttl[11:].replace("-"," ").capitalize()
+    #         latestindex+="<li><a href="+item[0]+">"+ttl+"</a></li>"
+    #         postno+=1
+    # latestindex+="<li><a href=blog.html>more...</a></ul></div>"
 
-    d=os.path.join(destFolder,"pagelist.html")
-    os.system("cat "+ head + " > " + d)
-    os.system("cat "+ tmp + " >> " + d)
-    os.system("echo '"+ setModiFooter(foot,d,datetime.datetime.now()) + "' >> " + d)
-
-    # ===== Index on index.html ==========
-    d=os.path.join(destFolder,"index.html")
-        # latest posts
-    maxposts=5
-    postno=0
-    latestindex="<p>&nbsp;</p><div class=idx><h3>latest thoughts</h3><ul>"
-    for item in posts:
-        if postno<maxposts:
-            ttl=item[1]
-            ttl=ttl[:10]+": "+ttl[11:].replace("-"," ").capitalize()
-            latestindex+="<li><a href="+item[0]+">"+ttl+"</a></li>"
-            postno+=1
-    latestindex+="<li><a href=blog.html>more...</a></ul></div>"
-
-    zeroindex="<p>&nbsp;</p><div class=idx><h3>notes & pages</h3><ul>"
+    zeroindex="<p>&nbsp;</p><h3>notes & pages</h3><ul>"
     zlist=[]
     with open(i, "r") as myfile:
         lines = list(line for line in (l for l in myfile) if line)
@@ -179,11 +162,40 @@ def buildPageIndex():
         if item[1]!="":
             zeroindex+="<p class='comment'>"+item[1]
     zeroindex+="</ul></div>"
-
     # write index to the homepage
     with open(d, "r") as myfile:
         ind=myfile.read()
-        ind=ind.replace("<nyk0index>",latestindex+zeroindex)
+        ind=ind.replace("<nyk0index>",zeroindex)
+        myfile.close()
+    with open(d, "w") as myfile:
+        myfile.write(ind)
+        myfile.close()
+
+def buildPageIndex():
+    global pages
+    global posts
+    tmp="/tmp/tmp.html"
+    paghtml="<title>nyk0 - Index</title><h2>Index</h2><ul style='line-height:1.2em;list-style:none;'>"
+    pages.sort()
+    for page in pages:
+        paghtml+="<li><a href="+page[0]+">"+page[1]+"</a></li>"
+    paghtml+="</ul>"
+    with open(tmp, "w") as myfile:
+        myfile.write("<p>There are "+str(len(pages))+" indexed pages<p>&nbsp;<p>"+paghtml)
+        myfile.close()
+
+    d=os.path.join(destFolder,"pagelist.html")
+    os.system("cat "+ head + " > " + d)
+    os.system("cat "+ tmp + " >> " + d)
+    os.system("echo '"+ setModiFooter(foot,d,datetime.datetime.now()) + "' >> " + d)
+
+    theLinks="<p>&nbsp;</p><ul>"
+    theLinks+="<li><a href=vault.html>vault</a></li>"
+    theLinks+="</ul>"
+    # write index to the homepage
+    with open(d, "r") as myfile:
+        ind=myfile.read()
+        ind=ind.replace("<nyk0index>",theLinks)
         myfile.close()
     with open(d, "w") as myfile:
         myfile.write(ind)
