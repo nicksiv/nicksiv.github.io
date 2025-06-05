@@ -1,0 +1,12 @@
+nyk0-nomikon - Git: local version control
+
+## Git: local version control
+
+Today I finally put all my important files under version control. But without uploading to a web service like github. Apparently you can do that. There were lots of things I didn't quite get about git but now I know more.
+
+Even locally, git allows you to manage your own commits, view differences of versions, make branches and revert to older versions locally as well. Why the heck haven't thought of this before?\
+I already knew the commands I had to run from the time I've kept a hugo blog, and the other time I kept a Jekyll blog. All I had to do was navigate to my folder and run:
+
+`git init git add . git commit -m "comment"`
+
+I also installed [magit](https://magit.vc/) into my emacs, to have better control over my commits. It's fast, it's cool and now I won't have to enter those commands again.

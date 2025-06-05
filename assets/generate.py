@@ -131,6 +131,8 @@ def getDescription(tabs):
 def buildVault():
         # ===== Index on index.html ==========
     d=os.path.join(destFolder,"vault.html")
+    gahtml="<title>"+sitetitle+" - Vault</title><h1>The Vault</h1><p>note clippings</p>"
+
     #     # latest posts
     # maxposts=5
     # postno=0
@@ -157,20 +159,24 @@ def buildVault():
                         #zeroindex+="<li><a href="+fn+".html>"+fn+"</a></li> "
                 zlist.append([fn, desc])
     zlist.sort()
+
     for item in zlist:
         zeroindex+="<li><a href="+item[0]+".html>"+item[0]+"</a>"
         if item[1]!="":
             zeroindex+="<p class='comment'>"+item[1]
     zeroindex+="</ul></div>"
+    tmp="/tmp/tmp.html"
     # write index to the homepage
-    with open(d, "r") as myfile:
-        ind=myfile.read()
-        ind=ind.replace("<nyk0index>",zeroindex)
-        myfile.close()
-    with open(d, "w") as myfile:
-        myfile.write(ind)
+    with open(tmp, "w") as myfile:
+        myfile.write(gahtml+zeroindex)
         myfile.close()
 
+    os.system("cat "+ head + " > " + d)
+    os.system("cat "+ tmp + " >> " + d)
+
+    pages.append(["vault.html","vault"])
+
+        
 def buildPageIndex():
     global pages
     global posts
@@ -189,7 +195,11 @@ def buildPageIndex():
     os.system("cat "+ tmp + " >> " + d)
     os.system("echo '"+ setModiFooter(foot,d,datetime.datetime.now()) + "' >> " + d)
 
+    d=os.path.join(destFolder,"index.html")
+
     theLinks="<p>&nbsp;</p><ul>"
+    theLinks+="<li><a href=about.html>about</a></li>"
+
     theLinks+="<li><a href=vault.html>vault</a></li>"
     theLinks+="</ul>"
     # write index to the homepage
@@ -324,7 +334,9 @@ def publish():
             os.system("echo '"+ setModiFooter(foot,d,srcfiletime) + "' >> " + d)
 
     copySiteFiles()
+
     buildGallery()
+    buildVault()
     buildPostIndex()
     buildRecent()
     buildPageIndex()

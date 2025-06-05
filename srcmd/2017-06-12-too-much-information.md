@@ -1,0 +1,7 @@
+nyk0-nomikon - Too much information
+
+## Too much information
+
+I stopped reading articles on the internet. Not entirely, but I'm consuming a much smaller volume of information now. After all, I realized that a big part of this information is totally useless or purely entertaining. So I thought, maybe trimming down this inflow should be beneficial. And I think it is, really. I have more time and I'm not constantly feeling that someone tries to sell me something. To manage this slim information feed, I'm using an old invention. The RSS feeds. They have been around for years, but depreciated in the social networking era. It's a nice and elegant solution if you want to read what you choose. I hope it will stay around because the whole deal is really irritating: To get information, you have to buy it somehow. You should subscribe to a newsletter, buy a book, don't block ads or sell your attention to social networks. Depend on someone else to "curate" the content to suit your needs. It is not my cup of tea.
+
+Most of the content creators nowadays are reproducing the same old stuff. You can easily arrive to such a conclusion if you follow a topic for a year or so. That whole deal makes me yawn and move ahead. So, I've cut my consumption, reading just what I care about and in the meantime I'm writing my own content. It's one of the thousands of things, one can do with time. Maybe I haven't got a lot to say but again, who has?

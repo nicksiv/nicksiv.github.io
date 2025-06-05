@@ -1,0 +1,143 @@
+nyk0-nomikon - Tiddlywiki
+
+## Tiddlywiki
+
+When I first started testing Tiddlywiki in summer, I found out a lot about the new version which I could use to have a better experience.
+
+This document may serve as a starting point for anyone who wants to easily setup a low maintenance wiki. I tried to experiment with other wiki systems available under Linux, but setting up a whole LAMP server for using a wiki locally seemed like an overkill (and it is as I'm so lazy to do such things).
+
+Now Tiddlywiki as a javascript powered application has some downsides and I admit that I was a bit sceptical at first: Your browser will not save data in it easily and your data will be bundled inside an HTML file which is cool but creates a bit of insecurity. You know, there's a chance that things will go south and the file gets corrupted. Needless to say you need to backup the whole wiki frequently.
+
+### Nodejs to the rescue
+
+After researching a bit, I found out that there is a tiddlywiki version for nodejs. Nodejs acts like a server building your wiki from text files. It's like a static blog engine. You run it in the background and visit a localhost page in your browser. New you can save easily and even work directly with your text files from a normal text editor. Even if corruption hits your wiki, your files are seperated from it.
+
+[Here are the instructions I've used to set this up into my Linux system](https://tiddlywiki.com/#Installing%20TiddlyWiki%20on%20Node.js)
+
+After setting it up, I created a new wiki
+
+    tiddlywiki ~/Documents/mynewwiki --init server
+
+and run the command to start the server
+
+    tiddlywiki ~/Documents/mynewwiki --listen
+
+That's all! Visiting <http://127.0.0.1:8080/> in my browser loads my wiki ready to be edited.
+
+I Backup the whole wiki to a single html file using this
+
+    tiddlywiki ~/Documents/mynewwiki --build index
+
+I use this command to keep daily backups of my wiki and sync one of the into my phone. Of course I use a non editable copy to have my information into my mobile. To edit on the mobile phone, termux for android supports the whole nodejs setup. I have tried it and reporting that it works just fine. So it is another nice option.
+
+### Guides
+
+-   [Gitsaver with GitLab](https://talk.tiddlywiki.org/t/git-saver-with-gitlab/726)
+-   [Extra Tiddlywiki icons](https://morosanuae.github.io/tw-icons/)
+-   [Talks with Jeremy Ruston](https://www.youtube.com/c/JeremyRuston/videos)
+-   [Video: Anne Laure (Ness Labs) publishes a digital garden with selected tiddlers](https://www.youtube.com/watch?v=vuU3MrxdKcU)
+
+### Articles & Links
+
+-   [An opinionated approach to TiddlyWiki](https://lesser.occult.institute/an-opinionated-approach-to-tiddlywiki)
+-   [TiddlyWiki5, Raspberry Pi and Vim: A guide for the command line aficionado](https://www.preciouschicken.com/blog/posts/tiddlywiki5-raspberry-pi-guide/)
+-   [TiddlyWiki: Getting Started with digital gardens, networked thinking and non-linear research --- Babycastles](https://www.babycastles.com/babycastles-academy/tiddlywiki)
+-   [Hack Your Life With A Private Wiki Notebook, Getting Things Done, And Other Systems](http://webseitz.fluxent.com/wiki/HackYourLifeWithAPrivateWikiNotebookGettingThingsDoneAndOtherSystems)
+-   [Font converter to css (to include into TW as CSS)](https://transfonter.org/)
+-   [Scripts in Tiddlywiki --- codes, macros, and solutions in TW](https://kookma.github.io/TW-Scripts/)
+-   [A ton of TW Resources](https://dynalist.io/d/zUP-nIWu2FFoXH-oM7L7d9DM)
+-   [Github source of TW](https://github.com/Jermolene/TiddlyWiki5)
+-   [Build a deep, lasting understanding of TiddlyWiki](https://groktiddlywiki.com/read/)
+-   [Conversation about Tiddlyhost & TiddlyWiki-Hacker News](https://news.ycombinator.com/item?id=31517039)
+-   [Migrate Tiddlywiki to org-roam - Part 1: Export Tiddlers - blog.dornea.nu](https://blog.dornea.nu/2022/09/03/migrate-tiddlywiki-to-org-roam-part-1-export-tiddlers/)
+
+### Versions & Resources
+
+-   [Stroll](https://giffmex.org/stroll/stroll.html)
+-   [Memory keeper](https://clsturgeon.github.io/MemoryKeeper/)
+-   [Notebook theme](https://github.com/NicolasPetton/Notebook)
+-   <https://tid.li/tw5/themes.html>
+-   [Krystal theme (digital garden style)](https://crazko.github.io/krystal/)
+-   [Dracula pallete](https://github.com/dracula/tiddlywiki)
+-   [Multicolumn theme](https://burningtreec.github.io/tiddlywiki-multi-columns/)
+-   [Captivate theme](https://cdruan.github.io/tw5-captivate/)
+
+### Plugins
+
+-   [Commander](https://kookma.github.io/TW-Commander/)
+-   [click2edit](https://danielorodriguez.com/TW5-2click2edit/)
+-   [autolist](https://saqimtiaz.github.io/sq-tw/editor-autolists.html)
+-   [TiddlyWiki5 Central Plugin Library](https://tw-cpl.netlify.app)
+
+### Code
+
+-   Make Tiddlywiki available on LAN
+
+    (applicable to the nodeJS version)
+
+    Adding the host=0.0.0.0 parameter to the --listen command will make\
+    the wiki available on the whole LAN typing the ip address of the pc\
+    eg: 192.168.1.11:8181
+
+        tiddlywiki C:\Users\nyko\Documents\wiki --listen port=8181 anon-username=kyr0ss host=0.0.0.0
+
+-   Bookmarklet to copy site with title as Tiddlywiki link
+
+    When there is a need to add a hyperlink to your wiki, this\
+    bookmarklet give you the ability to get the site\'s title as well in\
+    tiddlywiki format into the clipboard, ready to get pasted into a\
+    tiddler.
+
+        javascript:(function()%7Blet%20sel=document.getSelection();let%20selText=%22%22;const%20reference=%60%5B%5B$%7Bdocument.title%20%7D|$%7Blocation.href%20%7D%5D%5D%60;const%20selectedRanges=%5B%5D;if(sel.rangeCount%3E1)%7BselText=reference+%22%5Cn%22;for(let%20i=0;i%3Csel.rangeCount;i+=1)%7BselText+=%60%5Ct$%7Bsel.getRangeAt(i).toString().trim()%7D%3C%3C%3C%20%5Cn%60;selectedRanges.push(sel.getRangeAt(i))%7D%7Delse%7BselText=sel.toString().trim();if(selText.length)%7BselectedRanges.push(sel.getRangeAt(0));selText=%60%3C%3C%3C%5Cn%20$%7B%20selText%20%7D%5Cn%3C%3C%3C%20%60%7DselText+=reference%7Dconst%20ta=document.createElement(%22textarea%22);ta.textContent=%60$%7B%20selText%20%7D%60;document.body.appendChild(ta);const%20docSel=document.getSelection();docSel.removeAllRanges();ta.select();document.execCommand(%22copy%22);docSel.removeAllRanges();document.body.removeChild(ta);let%20newSel=document.getSelection();for(let%20i=0;i%3CselectedRanges.length;i+=1)%7BnewSel.addRange(selectedRanges%5Bi%5D)%7Dlet%20toaster=document.createElement(%22div%22);toaster.innerHTML=%60Copied!%60;toaster.style.position=%22fixed%22;toaster.style.display=%22block%22;toaster.style.right=%2210px%22;toaster.style.top=%2210px%22;toaster.style.backgroundColor=%22red%22;toaster.style.color=%22%23FFFFFF%22;toaster.style.padding=%225px%22;toaster.style.borderRadius=%225px%22;toaster.style.zIndex=%2299999%22;document.body.appendChild(toaster);setTimeout(function()%7Btoaster.style.opacity=0;toaster.style.transition=%22opacity%202s%22%7D,2000);setTimeout(function()%7Bdocument.body.removeChild(toaster)%7D,4000)%7D)();
+
+-   New tiddlers
+
+        <$macrocall $name="timeline" format={{$:/language/RecentChanges/DateFormat}} dateField="created"/>
+
+-   List tiddlers of a tag
+
+        <<list-links filter:"[tag[project]]">>
+
+-   Filter to view tiddlers created the last week
+
+        [days:created[-8]] 
+
+-   Attach a file
+
+        [ext[description|files/folder/myfile.pdf]]
+
+-   Attach a picture
+
+        [img width=280px [files/folder/img.jpg]]
+
+-   Link list
+
+        <<list-links "[tag[Hardware]sort[title]]">>
+
+-   Lazy loading with nodejs
+
+        tiddlywiki ~/Documents/wiki/ --listen root-tiddler=$:/core/save/lazy-all
+
+-   Add date field to a list with custom format
+
+        <$view field="created" format="date" template="YYYY-0MM-0DD"/>
+
+### Links
+
+-   [Filters --- filter and list examples](https://tobibeer.github.io/tw/filters/#Filter%20Examples)
+
+-   [Add a favicon](https://tiddlywiki.psat.com.au/#Quick%20Tip%20-%20Favicons)
+
+-   [How do you save? Forum post of different methods people use](https://talk.tiddlywiki.org/t/how-do-you-save/6624/27)
+
+-   [The famous tiddlywiki management utility for advanced usage](https://github.com/OokTech/TW5-Bob)
+
+### Wikis
+
+-   [⦗ℍ𝕪𝕡𝕖𝕣-𝔱𝔢𝔵𝔱:h0p3⦘](https://h0p3.neocities.org/)
+-   [sphygmus/](https://sphygm.us/)
+-   [Zettelkasten --- The public musings of Soren Bjornstad](https://zettelkasten.sorenbjornstad.com/)
+-   [gavcloud](https://gavart.ist/)
+-   [https://groktiddlywiki.com/](https://groktiddlywiki.com/read/)
+-   [Notes to Self -- Phil](https://youneedastereo.com/)
+-   [Felix wiki (in Tiddlywiki classic)](https://felix.plesoianu.ro/wiki.html)
