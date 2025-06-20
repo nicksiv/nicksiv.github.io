@@ -2,7 +2,7 @@
 *retired cybernaut and experimenting technomage*
 welcome to my personal web-space!
 
-<img style="border-radius:80px;" src="site/img/profile.jpg" />
+<img style="border-radius:80px;" src="img/profile.jpg" />
 
 ### Links
 * [Fediverse](https://octodon.social/@nicksiv)
@@ -11,4 +11,4 @@ welcome to my personal web-space!
 
 Welcome to my public notes web space.
 
-For the time being, you can browse the [notes index](https://nicksiv.github.io/index/index) and search through the [repository](https://github.com/nicksiv/nicksiv.github.io/tree/main/zk).
+For the time being, you can browse the [notes index](https://nicksiv.github.io/site/index-pages.html) 
