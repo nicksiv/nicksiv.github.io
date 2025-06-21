@@ -1,7 +1,7 @@
 import os
 import re
 
-folder_path = "~/nicksiv.gitub.io/src/"
+folder_path = "/home/nick/nicksiv.github.io/src/"
 for filename in os.listdir(folder_path):
     if filename.endswith(".html"):
         filepath = os.path.join(folder_path, filename)
@@ -9,6 +9,8 @@ for filename in os.listdir(folder_path):
             content = f.read()
             content = re.sub(r'^\s*<body[^>]*>', '', content, flags=re.IGNORECASE)
             content = re.sub(r'</body>\s*$', '', content, flags=re.IGNORECASE)
+            # Remove title tag and its content
+            content = re.sub(r'<title>.*?</title>', '', content, flags=re.IGNORECASE)
             f.seek(0)
             f.write(content)
             f.truncate()
