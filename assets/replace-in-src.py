@@ -11,6 +11,9 @@ for filename in os.listdir(folder_path):
             content = re.sub(r'</body>\s*$', '', content, flags=re.IGNORECASE)
             # Remove title tag and its content
             content = re.sub(r'<title>.*?</title>', '', content, flags=re.IGNORECASE)
+           # Remove any resulting blank lines
+            content = '\n'.join(line for line in content.split('\n') if line.strip())
+
             f.seek(0)
             f.write(content)
             f.truncate()
