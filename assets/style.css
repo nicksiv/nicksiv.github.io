@@ -112,13 +112,13 @@ nav ul li a{
     line-height:110%;
     border-radius: 20px;
     background-color: var(--linksh-dark);
-    padding:10px;
+    padding:2px;
     padding-top:1px;
 }
 
 
 .idx ul li{
-    padding:4px;
+    padding:2px;
     list-style:none;
     margin-left: 2px;
     /*border-left:3px dotted var(--bold-color);*/
