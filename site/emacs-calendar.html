@@ -19,9 +19,6 @@
         </header>
 
       <main>
-    <title>nyk0-nomikon - Emacs google calendar</title>
-
-  <body>
     <h2>Emacs google calendar</h2>
       <p>Due to lack of easy solutions to view my google calendar
       without having<br />
@@ -43,20 +40,17 @@
   (add-hook &#39;diary-list-entries-hook &#39;diary-include-other-diary-files)
   (add-hook &#39;diary-mark-entries-hook &#39;diary-mark-included-diary-files)
   (setq diary-list-entries-hook &#39;(diary-include-other-diary-files diary-sort-entries))
-
   ; calendars you want to download
   ; each item links to a remote iCal calendar
   (setq calendars
     &#39;(
       (&quot;nyk0&quot; . &quot;private address of galendar file&quot;)
        ))
-
   (defun getcal (url file)
   &quot;Download ics file and add it to file&quot;
   (let ((tmpfile (url-file-local-copy url)))
   (icalendar-import-file tmpfile file)
   (kill-buffer (car (last (split-string tmpfile &quot;/&quot;))))))
-
   (defun nyko/getcals ()
   &quot;Load a set of ICS calendars into Emacs diary files&quot;
   (interactive)
@@ -64,7 +58,6 @@
   (erase-buffer)
   (getcal &quot;private address of google calendar&quot; (concat diaryDir &quot;nyk0&quot;))
   (kill-this-buffer)
-
   )</code></pre>
       <p>In order to import more than one calendars, you need to update
       each<br />
@@ -78,13 +71,11 @@
       <p><a
       href="https://sachachua.com/blog/2024/09/2024-09-02-emacs-news/">emacs
       news 2024-09-02 &gt;<br />
-      Other</a></p>
-  </body>
-</main>
-</body>
+      Other</a></p></main>
         <footer>
-         last update: 2025-06-20 19:42 -- <a href="https://github.com/nicksiv" rel="me">nyk0</a> © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+         last update: 2025-06-21 06:50 -- <a href="https://github.com/nicksiv" rel="me">nyk0</a> © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
         </footer>    
+</body>
 
 </html>
 

@@ -1,6 +1,3 @@
-    
-
-  <body>
     <h2>Linux - music file management commands</h2>
       <h2 id="copy-m3u-playlist-files-in-a-folder">Copy m3u playlist
       files in a folder</h2>
@@ -19,10 +16,7 @@
       <h3 id="real-example">Real example</h3>
       <pre><code># step 1
 cuebreakpoints Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.cue | shnsplit -o flac Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.flac  -f Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.cue -t &quot;%n. %t&quot; Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.flac &lt; Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.cue 
-
 # step 2
 # fill the tags (make sure the original flac is in another dir)
-
 cuetag Volume\ 1\(CD06\)\ Symphonies\ KV\ 111a-130-132-183.cue *.flac
 </code></pre>
-  

@@ -7,8 +7,11 @@ for filename in os.listdir(folder_path):
         filepath = os.path.join(folder_path, filename)
         with open(filepath, 'r+', encoding='utf-8') as f:
             content = f.read()
-            content = re.sub(r'^\s*<body[^>]*>', '', content, flags=re.IGNORECASE)
-            content = re.sub(r'</body>\s*$', '', content, flags=re.IGNORECASE)
+            # Remove opening body tag (anywhere in document)
+            content = re.sub(r'<body[^>]*>', '', content, flags=re.IGNORECASE)
+
+            # Remove closing body tag (anywhere in document)
+            content = re.sub(r'</body>', '', content, flags=re.IGNORECASE)
             # Remove title tag and its content
             content = re.sub(r'<title>.*?</title>', '', content, flags=re.IGNORECASE)
            # Remove any resulting blank lines

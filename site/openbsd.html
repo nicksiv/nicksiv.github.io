@@ -19,9 +19,6 @@
         </header>
 
       <main>
-    <title>nyk0-nomikon - OpenBSD configuration</title>
-
-  <body>
     <h2>OpenBSD configuration</h2>
       <p>I'm experimenting regularly to setup openBSD as a desktop
       OS.</p>
@@ -30,7 +27,6 @@
 ifconfig iwn0 scan
 ifconfig iwn0 nwid SSID_name wpakey &quot;password&quot;
 dhclient iwn0
-
 # make it permanent 
 # create /etc/hostname.iwn0
 # add more join commands to connect with priority
@@ -45,14 +41,11 @@ rcctl start apmd</code></pre>
       <h3 id="other-configurations">Other configurations</h3>
       <pre><code># Enable xenodm on startup
 rcctl enable xenodm
-
 # Configure desktop
 ~/.xsession for xenodm autostart
 ~/.xinitrc for startx
-
 # Configure doas
 echo &#39;permit username&#39; &gt; /etc/doas.conf
-
 # Touchpad fixes
 ## /etc/wsconsctl.conf
 mouse.tp.tapping=1
@@ -121,13 +114,11 @@ ZZZ # hibernate</code></pre>
       class="uri">https://github.com/raffaelschneider/awesome-openbsd-desktop</a></li>
       <li><a href="https://astro-gr.org/openbsd-cwm/"
       class="uri">https://astro-gr.org/openbsd-cwm/</a></li>
-      </ul>
-  </body>
-</main>
-</body>
+      </ul></main>
         <footer>
-         last update: 2025-06-20 19:42 -- <a href="https://github.com/nicksiv" rel="me">nyk0</a> © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
+         last update: 2025-06-21 06:50 -- <a href="https://github.com/nicksiv" rel="me">nyk0</a> © 2024&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>
         </footer>    
+</body>
 
 </html>
 
