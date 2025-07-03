@@ -17,7 +17,7 @@ pages=[]
 posts=[]
 head=os.path.join(assetFolder,"header.html")
 foot=os.path.join(assetFolder,"footer.html")
-sitetitle="nyk0-nomikon"
+sitetitle="nyk0"
 forceUpdate=False
 
 
